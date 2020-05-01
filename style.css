@@ -4,6 +4,19 @@ body {
     color: #35465d;
 }
 
+p.backimg {
+color: #000000;
+background-color: #f8dce0;
+background-image: url("/img/backgroundpattern.png")
+}
+
+.title-img {
+padding : 0 3%; 
+margin: auto;
+text-align: center;
+
+}
+
 .file-upload {
 padding : 15% 3%; 
 margin: 0 auto;
@@ -55,19 +68,24 @@ border: solid 1.5px #e6dcdc;
   cursor: pointer;
 }
 
+.iconpr {
+    text-align: right;
+    padding: 10px;
+}
+
 .image-upload-wrap {
   border: 4px dashed #1FB264;
   position: relative;
     object-fit: contain;
     border-radius: 10px;
-    border: dashed 1.5px #35465d;
+    border: dashed 5px #f05f70;
     backgroud-color: #ffffff;
 }
 
 .image-dropping,
 .image-upload-wrap:hover {
   background-color: #35465d;
-  border: 1.5px dashed #ffffff;
+  border: 5px dashed #ff9b51;
 }
 
 .image-title-wrap {
@@ -275,8 +293,16 @@ input:checked + label > .knob > i:before {
 }
 
 #label-container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+}
+
+.deer-animal-title {
+    color: #3ba363;
+}
+
+.animal-explain {
+    font-size: 1.5rem;
 }
 
 .animal-label {
@@ -286,7 +312,8 @@ input:checked + label > .knob > i:before {
 }
 
 .bar-container {
-    height: 2.7rem;
+    height: 3rem;
+    margin-top: auto;
 }
 
 .deer-box {
@@ -387,4 +414,10 @@ input:checked + label > .knob > i:before {
     height: 2rem;
     border-radius: 10px;
     background-color: rgba(49, 132, 155, 1);
+}
+
+.dis-th {
+    margin-top: 50px;
+    width: 90%;
+    margin: 0 auto;
 }

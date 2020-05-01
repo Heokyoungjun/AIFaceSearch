@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>どうぶつ顔テスト</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loading.css">
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ea992a7f386c660"></script>
+
+</head>
+
+<body>
+    <p class="backimg">
+        
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light nav-distance">
+        <a class="navbar-brand" href="#">동물 테스트</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav> -->
+    <section class="section">
+        <h1 class="title">どうぶつ顔診断</h1>
+        <h2 class="subtitle">あなたはナニ顔？</h2>
+    </section>
+    <h3 class="pb-2 d-flex justify-content-center">性別選択</h3>
+    <section class="d-flex justify-content-center">
+        <p class="d-flex align-items-center pr-3">女</p>
+        <input type="checkbox" id="gender">
+        <label for="gender">
+            <span class="knob">
+                <i></i>
+            </span>
+        </label>
+        <p class="d-flex align-items-center pl-3">男</p>
+    </section>
+
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="container file-upload mt-5 mb-5">
+        <div class="image-upload-wrap" style="width:70%; margin:0 auto;">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+                <img src="img/upload-icon.png" alt="" class="mt-5 upload" style="width:20%">
+                <h3 class="upload-text">写真追加</h3>
+            </div>
+        </div>
+        <div class="file-upload-content">
+            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+            <div id="loading" class="cat">
+                <div class="cat__body"></div>
+                <div class="cat__body"></div>
+                <div class="cat__tail"></div>
+                <div class="cat__head"></div>
+            </div>
+            <p class="result-message"></p>
+            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_inline_share_toolbox"></div>
+
+            <div class="pt-5 image-title-wrap">
+                <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
+                    <span class="try-again-text">リトライ</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="webcam-container"></div>
+    <div id="disqus_thread" class="dis-th"></div>
+    <div class="iconpr">
+        <div>아이콘 제작자
+            <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from
+            <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
+        </div>
+    </div>
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document,
+                s = d.createElement('script');
+            s.src = 'https://funy-nino.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('.image-upload-wrap').hide();
+                    $('#loading').show();
+                    $('.file-upload-image').attr('src', e.target.result);
+                    $('.file-upload-content').show();
+                    $('.image-title').html(input.files[0].name);
+                };
+                reader.readAsDataURL(input.files[0]);
+                init().then(() => {
+                    predict();
+                    $('#loading').hide();
+                });
+            } else {
+                removeUpload();
+            }
+        }
+
+        function removeUpload() {
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.image-upload-wrap').show();
+        }
+        $('.image-upload-wrap').bind('dragover', function() {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function() {
+            $('.image-upload-wrap').removeClass('image-dropping');
+        });
+    </script>
+    <script type="text/javascript">
+        const URL = "https://teachablemachine.withgoogle.com/models/hUaxnqnlw/";
+        // let URL;
+        // const urlMale = "";
+        // const urlFemale = "";
+        // let model, webcam, labelContainer, maxPredictions;
+        async function init() {
+            // if (document.getElementById("gender").checked) {
+            //     URL = urlMale;
+            // } else {
+            //     URL = urlFemale;
+            // }
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) { // and class labels
+                var em = document.createElement("div")
+                em.classList.add("d-flex");
+                labelContainer.appendChild(em);
+            }
+        }
+        async function predict() {
+            var image1 = document.getElementById("face-image")
+            const prediction = await model.predict(image1, false);
+            prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+            console.log(prediction[0].className);
+            var rsMsg;
+            var resultTitle, resultExplain, resultCeleb;
+            resultTitle = "알수없음";
+            resultExplain = "";
+            resultCeleb = "";
+            switch (prediction[0].className) {
+                case "dog":
+                    rsMsg = "강아지상"
+                    break;
+                case "cat":
+                    rsMsg = "고양이상"
+                    break;
+                default:
+                    // code block
+            }
+            var title = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>";
+            var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>";
+            var celeb = "<div class='" + prediction[0].className + "-animal-celeb pt-2 pb-2'>" + resultCeleb + "</div>";
+            $('.result-message').html(title + explain + celeb);
+            var barWidth;
+            for (let i = 0; i < maxPredictions; i++) {
+                if (prediction[i].probability.toFixed(2) > 0.1) {
+                    barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+                } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                    barWidth = "4%"
+                } else {
+                    barWidth = "2%"
+                }
+                var labelTitle;
+                switch (prediction[i].className) {
+                    case "dog":
+                        labelTitle = "<img src='img/051-bulldog.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "cat":
+                        labelTitle = "<img src='img/051-cat.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "rabbit":
+                        labelTitle = "<img src='img/051-rabbit.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "dinosaur":
+                        labelTitle = "<img src='img/051-dinosaur.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "bear":
+                        labelTitle = "<img src='img/051-bear.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "deer":
+                        labelTitle = "사슴상"
+                        break;
+                    case "fox":
+                        labelTitle = "<img src='img/051-fox.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "bat":
+                        labelTitle = "<img src='img/051-bat.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "chameleon":
+                        labelTitle = "<img src='img/051-chameleon.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "llama":
+                        labelTitle = "<img src='img/051-llama.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "tiger":
+                        labelTitle = "<img src='img/051-tiger.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "snake":
+                        labelTitle = "<img src='img/051-snake.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "pig":
+                        labelTitle = "<img src='img/051-pig.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "chicken":
+                        labelTitle = "<img src='img/051-chicken.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "frog":
+                        labelTitle = "<img src='img/051-frog.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "monkey":
+                        labelTitle = "<img src='img/051-monkey.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    case "mouse":
+                        labelTitle = "<img src='img/051-mouse.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                        break;
+                    default:
+                        labelTitle = "알수없음"
+                }
+                // var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>";
+                var label = labelTitle;
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>";
+                labelContainer.childNodes[i].innerHTML = label + bar;
+            }
+        }
+    </script>
+    </p>
+</body>
+
+<!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+
+<!-- Copyright (c) 2020 by Mert Cukuren (https://codepen.io/knyttneve/pen/bPpEZY)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+
+<!-- Copyright (c) 2020 by Rplus (https://codepen.io/Rplus/pen/PWZYRM)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+
+</html>

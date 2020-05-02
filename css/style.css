@@ -156,6 +156,8 @@ border: solid 1.5px #e6dcdc;
     line-height: 1.68;
     text-align: left;
     color: #35465d;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .navbar-light .navbar-toggler {

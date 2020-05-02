@@ -1,3 +1,9 @@
+$(document).ready(function(){
+         $("#menu").load("MenuCommon.html")
+        /* id 지정을 통해서도 가능합니다. 
+         $("#header").load("header.html #navbar")
+         */       
+      });
 
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -32,7 +38,7 @@ $('.image-upload-wrap').bind('dragleave', function() {
 });
 
 
-const URL = "https://teachablemachine.withgoogle.com/models/hUaxnqnlw/";
+const URL = "https://teachablemachine.withgoogle.com/models/ju5-q_uzx/";
 // let URL;
 // const urlMale = "";
 // const urlFemale = "";

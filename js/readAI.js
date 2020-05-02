@@ -38,17 +38,16 @@ $('.image-upload-wrap').bind('dragleave', function() {
 });
 
 
-const URL = "https://teachablemachine.withgoogle.com/models/ju5-q_uzx/";
-// let URL;
-// const urlMale = "";
-// const urlFemale = "";
-// let model, webcam, labelContainer, maxPredictions;
+let URL;
+const urlMale = "https://teachablemachine.withgoogle.com/models/UHjCBukkm/";
+const urlFemale = "https://teachablemachine.withgoogle.com/models/ju5-q_uzx/";
+let model, webcam, labelContainer, maxPredictions;
 async function init() {
-    // if (document.getElementById("gender").checked) {
-    //     URL = urlMale;
-    // } else {
-    //     URL = urlFemale;
-    // }
+    if (document.getElementById("gender").checked) {
+        URL = urlMale;
+    } else {
+        URL = urlFemale;
+    }
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
     model = await tmImage.load(modelURL, metadataURL);
@@ -95,55 +94,34 @@ async function predict() {
         var labelTitle;
         switch (prediction[i].className) {
             case "dog":
-                labelTitle = "<img src='img/051-bulldog.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/bulldog.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
                 break;
             case "cat":
-                labelTitle = "<img src='img/051-cat.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
-                break;
-            case "rabbit":
-                labelTitle = "<img src='img/051-rabbit.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
-                break;
-            case "dinosaur":
-                labelTitle = "<img src='img/051-dinosaur.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/cat.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
                 break;
             case "bear":
-                labelTitle = "<img src='img/051-bear.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/bear.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
                 break;
-            case "deer":
-                labelTitle = "사슴상"
+            case "dinosaur":
+                labelTitle = "<img src='img/animal/dinosaur.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
                 break;
-            case "fox":
-                labelTitle = "<img src='img/051-fox.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+            case "wolf":
+                labelTitle = "<img src='img/animal/wolf.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
                 break;
-            case "bat":
-                labelTitle = "<img src='img/051-bat.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
-                break;
-            case "chameleon":
-                labelTitle = "<img src='img/051-chameleon.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
-                break;
-            case "llama":
-                labelTitle = "<img src='img/051-llama.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
-                break;
-            case "tiger":
-                labelTitle = "<img src='img/051-tiger.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+           case "horse":
+                labelTitle = "<img src='img/animal/horse.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
                 break;
             case "snake":
-                labelTitle = "<img src='img/051-snake.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/snake.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
                 break;
-            case "pig":
-                labelTitle = "<img src='img/051-pig.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
-                break;
-            case "chicken":
-                labelTitle = "<img src='img/051-chicken.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
-                break;
-            case "frog":
-                labelTitle = "<img src='img/051-frog.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
-                break;
+            case "fox":
+                labelTitle = "<img src='img/animal/fox.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                break;            
             case "monkey":
-                labelTitle = "<img src='img/051-monkey.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/monkey.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
                 break;
             case "mouse":
-                labelTitle = "<img src='img/051-mouse.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/mouse.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
                 break;
             default:
                 labelTitle = "알수없음"

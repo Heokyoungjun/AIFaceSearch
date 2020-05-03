@@ -42,6 +42,18 @@ let URL;
 const urlMale = "https://teachablemachine.withgoogle.com/models/UHjCBukkm/";
 const urlFemale = "https://teachablemachine.withgoogle.com/models/ju5-q_uzx/";
 let model, webcam, labelContainer, maxPredictions;
+var dogMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "男女問わず「かわいい！」「癒される！」と言われる優しい雰囲気を持った顔立ち大人気NO1！！！","笑うと子犬のような顔になる笑顔が可愛いK-POPアイドルに似ている。まさかアナタは？？？");
+var catMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var bearMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var dinosaurMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var wolfMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var horseMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var snakeMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var foxMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var monkeyMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var mouseMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var rabbitMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+
 async function init() {
     if (document.getElementById("gender").checked) {
         URL = urlMale;
@@ -66,11 +78,12 @@ async function predict() {
     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
     var rsMsg;
     var resultTitle, resultExplain;
+    var ranNum = Math.floor(Math.random()*(3)) + 1;
     if (document.getElementById("gender").checked) {
         switch (prediction[0].className) {
             case "dog":
-                resultTitle = "可愛いコイヌ顔";
-                resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!";
+                resultTitle = "愛らしい犬顔";
+                resultExplain = dogMsg[ranNum];
                 break;
                 
             case "cat":
@@ -133,7 +146,7 @@ async function predict() {
         switch (prediction[0].className) {
             case "dog":
                 resultTitle = "可愛いコイヌ顔";
-                resultExplain = "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!";
+                resultExplain = "愛らしくて魅力的な顔、다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!";
                 break;
                 
             case "cat":

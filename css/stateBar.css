@@ -12,52 +12,48 @@
     margin-top: auto;
 }
 
-
-.deer-animal-title {
-    color: #3ba363;
+.dog-animal-title {
+    color: #17a2b8;
 }
 
-.deer-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
-    background-color: rgba(117, 204, 84, 0.2);
+.cat-animal-title {
+    color: #ffc107;
 }
 
-.deer-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    background-color: rgba(117, 204, 84, 1);
+.bear-animal-title {
+    color: #692200;
 }
 
-.percent-text {
-    font-size: 1rem;
-    color: #ffffff;
+.dinosaur-animal-title {
+    color: #5cb767;
 }
 
-.cat-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
-    background-color: rgba(251, 176, 59, 0.2);
+.wolf-animal-title {
+    color: #007bff;
 }
 
-.cat-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    background-color: rgba(251, 176, 59, 1);
+.horse-animal-title {
+    color: #440107;
+}
+
+.snake-animal-title {
+    color: #546673;
+}
+
+.fox-animal-title {
+    color: #ff9b51;
+}
+
+.monkey-animal-title {
+    color: #8a532b;
+}
+
+.mouse-animal-title {
+    color: #484242;
+}
+
+.rabbit-animal-title {
+    color: #f05f70;
 }
 
 .dog-box {
@@ -67,7 +63,7 @@
     height: 2rem;
     border-radius: 10px;
     width: 100%;
-    background-color: rgba(27, 175, 234, 0.2);
+    background-color: rgba(23, 162, 184, 0.2);
 }
 
 .dog-bar {
@@ -76,26 +72,122 @@
     left: 0;
     height: 2rem;
     border-radius: 10px;
-    background-color: rgba(27, 175, 234, 1);
+    background-color: rgba(23, 162, 184, 1);
 }
 
-.rabbit-box {
+
+.cat-box {
     position: absolute;
     top: 0;
     left: 0;
     height: 2rem;
     border-radius: 10px;
     width: 100%;
-    background-color: rgba(235, 166, 190, 0.2);
+    background-color: rgba(255, 193, 7, 0.2);
 }
 
-.rabbit-bar {
+.cat-bar {
     position: absolute;
     top: 0;
     left: 0;
     height: 2rem;
     border-radius: 10px;
-    background-color: rgba(235, 166, 190, 1);
+    background-color: rgba(255, 193, 7, 1);
+}
+
+.bear-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(105, 34, 0, 0.2);
+}
+
+.bear-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(105, 34, 0, 1);
+}
+
+.dinosaur-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(92, 183, 103, 0.2);
+}
+
+.dinosaur-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(92, 183, 103, 1);
+}
+
+.wolf-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(0, 123, 255, 1);
+}
+
+.wolf-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(0, 123, 255, 0.2);
+}
+
+.horse-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(68, 1, 7, 0.2);
+}
+
+.horse-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(68, 1, 7, 1);
+}
+
+.snake-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(84, 102, 115, 0.2);
+}
+
+.snake-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(84, 102, 115, 1);
 }
 
 .fox-box {
@@ -105,7 +197,7 @@
     height: 2rem;
     border-radius: 10px;
     width: 100%;
-    background-color: rgba(49, 132, 155, 0.2);
+    background-color: rgba(255, 155, 81, 0.2);
 }
 
 .fox-bar {
@@ -114,11 +206,73 @@
     left: 0;
     height: 2rem;
     border-radius: 10px;
-    background-color: rgba(49, 132, 155, 1);
+    background-color: rgba(255, 155, 81, 1);
+}
+
+.monkey-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(138, 83, 43, 0.2);
+}
+
+.monkey-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(138, 83, 43, 1);
+}
+
+.mouse-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(72, 66, 66, 0.2);
+}
+
+.mouse-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(72, 66, 6, 1);
+}
+
+.rabbit-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(240, 95, 112, 0.2);
+}
+
+.rabbit-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(240, 95, 112, 1);
 }
 
 .dis-th {
     margin-top: 50px;
     width: 90%;
     margin: 0 auto;
+}
+
+.percent-text {
+    font-size: 1rem;
+    color: #ffffff;
 }

@@ -1,11 +1,11 @@
 #label-container {
     width: 90%;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .animal-explain {
-   font-size: 1.5rem;
+   font-size: 1.6rem;
    width: 90%;
    margin: 0 auto;
    color: #fff;
@@ -18,11 +18,11 @@
 
 .animal-title {
     font-size: 2.5rem;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .bar-container {
-    height: 3rem;
+    height: 3.5rem;
     margin-top: auto;
 }
 
@@ -70,213 +70,109 @@
     color: #f05f70;
 }
 
-.dog-box {
+.animal-box {
     position: absolute;
     top: 0;
     left: 0;
-    height: 2rem;
+    height: 2.7rem;
     border-radius: 10px;
     width: 100%;
+}
+
+.animal-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.7rem;
+    border-radius: 10px;
+}
+
+.dog-box {
     background-color: rgba(23, 162, 184, 0.2);
 }
 
 .dog-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(23, 162, 184, 1);
 }
 
 
 .cat-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(255, 193, 7, 0.2);
 }
 
 .cat-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(255, 193, 7, 1);
 }
 
 .bear-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(105, 34, 0, 0.2);
 }
 
 .bear-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(105, 34, 0, 1);
 }
 
 .dinosaur-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(92, 183, 103, 0.2);
 }
 
 .dinosaur-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(92, 183, 103, 1);
 }
 
 .wolf-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(0, 123, 255, 1);
 }
 
 .wolf-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(0, 123, 255, 0.2);
 }
 
 .horse-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(68, 1, 7, 0.2);
 }
 
 .horse-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(68, 1, 7, 1);
 }
 
 .snake-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(84, 102, 115, 0.2);
 }
 
 .snake-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(84, 102, 115, 1);
 }
 
 .fox-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(255, 155, 81, 0.2);
 }
 
 .fox-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(255, 155, 81, 1);
 }
 
 .monkey-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(138, 83, 43, 0.2);
 }
 
 .monkey-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(138, 83, 43, 1);
 }
 
 .mouse-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(72, 66, 66, 0.2);
 }
 
 .mouse-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(72, 66, 6, 1);
 }
 
 .rabbit-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
     background-color: rgba(240, 95, 112, 0.2);
 }
 
 .rabbit-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
     background-color: rgba(240, 95, 112, 1);
 }
 
@@ -287,6 +183,6 @@
 }
 
 .percent-text {
-    font-size: 1rem;
+    font-size: 1.6rem;
     color: #ffffff;
 }

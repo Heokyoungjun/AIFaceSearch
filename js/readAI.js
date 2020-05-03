@@ -160,43 +160,43 @@ async function predict() {
         var labelTitle;
         switch (prediction[i].className) {
             case "dog":
-                labelTitle = "<img src='img/animal/dog.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/dog.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
             case "cat":
-                labelTitle = "<img src='img/animal/cat.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/cat.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
             case "bear":
-                labelTitle = "<img src='img/animal/bear.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/bear.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
             case "dinosaur":
-                labelTitle = "<img src='img/animal/dinosaur.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/dinosaur.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
             case "wolf":
-                labelTitle = "<img src='img/animal/wolf.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/wolf.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
            case "horse":
-                labelTitle = "<img src='img/animal/horse.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/horse.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
             case "snake":
-                labelTitle = "<img src='img/animal/snake.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/snake.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
             case "fox":
-                labelTitle = "<img src='img/animal/fox.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/fox.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;            
             case "monkey":
-                labelTitle = "<img src='img/animal/monkey.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/monkey.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
             case "mouse":
-                labelTitle = "<img src='img/animal/mouse.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/mouse.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
             case "rabbit":
-                labelTitle = "<img src='img/animal/rabbit.png' alt='' style='width:10%;height:10%;padding-right:10px'>"
+                labelTitle = "<img src='img/animal/rabbit.png' alt='' style='width:12%;height:12%;padding-right:10px'>"
                 break;
             default:
                 labelTitle = "알수없음"
         }
         var label = labelTitle;
-        var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>";
+        var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box animal-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar animal-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>";
         labelContainer.childNodes[i].innerHTML = label + bar;
     }
 }

@@ -158,7 +158,6 @@ body {
 }
 
 .navbar-light .navbar-brand {
-    font-family: NanumSquareR;
     line-height: 1.68;
     text-align: left;
     color: #35465d;
@@ -175,14 +174,12 @@ body {
 }
 
 .title {
-    font-family: NanumSquareR;
     line-height: 1.67;
     text-align: center;
     color: #35465d;
 }
 
 .subtitle {
-    font-family: NanumSquareR;
     line-height: 1.53;
     text-align: center;
     color: #35465d;
@@ -199,7 +196,6 @@ body {
 }
 
 .upload-text {
-    font-family: NanumSquareR;
     width: 50%;
     font-size: 1.5rem;
     line-height: 1.57;

@@ -42,17 +42,19 @@ let URL;
 const urlMale = "https://teachablemachine.withgoogle.com/models/UHjCBukkm/";
 const urlFemale = "https://teachablemachine.withgoogle.com/models/ju5-q_uzx/";
 let model, webcam, labelContainer, maxPredictions;
-var dogMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "男女問わず「かわいい！」「癒される！」と言われる優しい雰囲気を持った顔立ち大人気NO1！！！","笑うと子犬のような顔になる笑顔が可愛いK-POPアイドルに似ている。まさかアナタは？？？");
-var catMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
-var bearMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
-var dinosaurMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
-var wolfMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
-var horseMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
-var snakeMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
-var foxMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
-var monkeyMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
-var mouseMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
-var rabbitMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "b","c","d","e");
+var dogMsg = new Array("愛らしくて魅力的な顔、第一印象からでも話しかけやすく、誰とでもすぐに仲良くなれるタイプ。優しい笑顔で大人気のあなたはヨクバリ〜〜〜", "男女問わず「かわいい！」「癒される！」と言われる優しい雰囲気を持った顔立ち大人気NO1！！！","笑うと子犬のような顔になる笑顔が可愛いK-POPアイドルに似ている。まさかアナタは？？？","たまらない魅力がたくさん！周りから好きになっちゃうかも！");
+var catMsg = new Array("最近、にわかに脚光を浴びている顔、クールでどこか気品が感じられ、謎めいた雰囲気が漂うアナタ！！。", "第一印象から冷たく感じられるあなた、コワイコワイ","一度ハマったらもっと知りたくなる“ツンデレ人”。","プライドが高くちょっぴりわがままで、初対面の人にはなかなか心を開かず、心を許した特定の相手に対しては全力で甘える傾向があるアナタ、愛されますよ。");
+var bearMsg = new Array("第一印象が怖くて近づいてこないが、誰よりも暖かい人、ガンバロヨ", "印象と別に暖かく頼もしいNo１","ぽっちゃり＆ガッチリ体型でよく食べるが、気が優しい力持つアナタ、ワウパワープール","デブじゃないよ、熊だよ");
+var dinosaurMsg = new Array("シックな性格、悪そうに見える印象だが、知るほどハマってしまう魅力を持つ人", "アナタはまだまだ進化中、素晴らしい","お前に決めた！！！","やや離れた瞳と大きな口、基本温和だがテンションが上がると熱い麺もある人");
+var wolfMsg = new Array("冷静&クールな性格が影響しているのか、個人主義的なところがある人", "仕事も恋愛も、狙った獲物は逃さないタイプ、ワォー。好きになり「この人がほしい」と思ったら口説き落とすまであきらめない人。","野生の強い印象、素敵な顔、性欲が強い魅力的なアナタ","ほとんど人を頼らず、冷めているところがあり、誰かに相談することは意味がないと考える人。しかし、実行力はかなりのもの");
+var horseMsg = new Array("やり手で仕事もバリバリこなし、プライベートでは友人も多いアナタ素晴らしい。", "頭の回転が速く、相手の気持ちを察してうまく行動できる人。","持久力が強く、何をしても真面目にする。精力も強く浮気が多いアナタGOOD!!!","性格が変わった人で短気のため、ミスが多いだが、自分の価値をしてくれる人を出会うと実力を発揮するタイプ");
+var snakeMsg = new Array("雰囲気から自信や頼もしさも感じる。また、冷たい印象があることが魅力的に映るでしょう", "ミステリアスでクールな印象を持つアナタ、クシーで特別感がある。","意志が強くて度胸もあって雰囲気だけでなく、内面的な強さを持っている人。","たくさんの魅力を秘めているアナタ、頼りがいや強さだけでなく、おおらかな性格を表すこともある。");
+var foxMsg = new Array("美しくてすごく綺麗な顔も持ち、セクシーな魅力が溢れる人", "エレガントタイプ顔でセンスがいい性格を持つ人が多いあなたは愛されているよ！！！","プライドが高い、というよりは失敗するのが嫌いで、その失敗したところも他人に見られたくない、といった完璧主義者と思われているタイプ。","眼光の鋭さがあり、その目力の強さが近寄りがたい冷たい雰囲気を周りに与えてしまっているようなタイプ、鹿kし、笑顔が可愛い。");
+var monkeyMsg = new Array("心身ともに頑丈でたくましく、アクティブで頼りがいがある。その一方で、妙に鈍感な一面も併せ持つのが特徴。", "一言でいえば、みんなの兄貴分のような存在、アニキ〜〜〜〜〜〜。","猿顔とは、言葉のとおりで「猿に似ている顔」という意味があるため、猿顔は美人とあまり結びつかない人も多いでしょう。","恋愛は不器用。猿顔の人は恋愛で苦労することが多いタイプ。愛嬌があり、周りとのコミュニケーションも上手くモテるが、自分から恋の駆け引きをするのは苦手。");
+var mouseMsg = new Array("話好きで社交的ですが、実はかなり自我が強く、そこに本人の悩みは集中しているタイプ。", "がさつな性格が多い。しかし、生活力が強い、自我が強くて意志も強いタイプ","いい加減さ・曖昧さ(あやふやな状況)を嫌うタイプ。どちらが正しくてどちらが間違っているかについて白黒つけたい心理に根ざしている部分がある。","行動がテキパキしている・動きがスピーディーであると言われる。勤勉・実直な性格であり、目標達成のためにコツコツと地道な努力を続けられるタイプ。");
+var rabbitMsg = new Array("穏やかで人を癒す性格の人が多い。さらに、滅多なことでは怒ったりせず静かに注意する程度なので、どんな人とも付き合うことができ好かれやすいタイプ", "結婚したら良きパートナーになるが、傷つきやすい一面もある。付き合う相手で運勢が変動するので注意が必要","うさぎ顔の人は純粋で優しい性格なので、他人の言動によって傷つきやすいタイプ。","恋愛面では、うさぎ顔とは正反対の肉食系の人が好み。");
+
+var rstTitle = new Array("愛らしい犬顔", "クールな猫顔", "頼もしい熊顔", "シックな恐竜顔", "素敵なオオカミ顔", "力持ち馬顔", "Sっぽい雰囲気がある蛇顔", "魅力的なキツネ顔", "モテる猿顔", "集中力いいネズミ顔", "可愛いウサギ顔");
 
 async function init() {
     if (document.getElementById("gender").checked) {
@@ -72,140 +74,75 @@ async function init() {
         labelContainer.appendChild(em);
     }
 }
+
 async function predict() {
     var image1 = document.getElementById("face-image")
     const prediction = await model.predict(image1, false);
     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
     var rsMsg;
     var resultTitle, resultExplain;
-    var ranNum = Math.floor(Math.random()*(3)) + 1;
-    if (document.getElementById("gender").checked) {
-        switch (prediction[0].className) {
-            case "dog":
-                resultTitle = "愛らしい犬顔";
-                resultExplain = dogMsg[ranNum];
-                break;
-                
-            case "cat":
-                resultTitle = "ツンデレネコ顔";
-                resultExplain = "무뚝뚝한 당신의 첫인상은 차가워 보이지만 묘한 매력을 풍겨 언제나 인기가 넘친다. 자존심이 세계 1등과 맞먹지만 관심 받는 것을 좋아하고 연인에게는 은근히 애교쟁이다. 시크한 츤데레로 연인에게 끊임없이 설렘을 안겨주는 당신은 고양이와 닮았다!";
-                break;
-                
-            case "bear":
-                resultTitle = "暖かいクマ顔";
-                resultExplain = "첫 인상은 무서워 보이지만 알고 보면 귀여운 매력의 당신! 꼼꼼하고 섬세한 성격으로 연인을 헌신적으로 챙겨주는 당신은 연인에게 듬직한 존재! 포근한 매력에 듬직함까지 갖춘 최고의 남자다!";
-                break;
-                
-            case "dinosaur":
-                resultTitle = "따뜻한 나쁜남자 キョウリュウ顔";
-                resultExplain = "무심한 성격에 첫인상은 나쁜 남자 같지만, 알고 보면 따뜻함이 묻어나는 당신! 시크한 매력에 선뜻 다가가지 못하지만 한번 다가가면 헤어나올 수 없는 터프한 매력을 가진 카리스마 있는 남자다.";
-                break;
-                
-            case "wolf":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-                
-            case "horse":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-                
-            case "snake":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-                
-            case "fox":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-            
-            case "monkey":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-            
-            case "mouse":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-                
-            case "rabbit":
-                resultTitle = "천진난만한 매력의 ウサギ顔";
-                resultExplain = "천진난만하고 귀여운 당신은 주변 사람들에게 기쁨을 주는 행복바이러스다! 호기심이 많아 활발하며 귀엽고 순수한 외모로 연인의 보호본능을 자극한다. 존재 자체가 상큼한 당신은 특별한 애교 없이도 연인에게 너무나도 사랑스럽다!";
-                break;
-                
-            default:
-                resultTitle = "該当なし";
-                resultExplain = ""
+    var ranNum = Math.floor(Math.random()*(4)) + 1;
+    switch (prediction[0].className) {
+        case "dog":
+            resultTitle = rstTitle[0];
+            resultExplain = dogMsg[ranNum];
+            break;
+
+        case "cat":
+            resultTitle = rstTitle[1];
+            resultExplain = catMsg[ranNum];
+            break;
+
+        case "bear":
+            resultTitle = rstTitle[2];
+            resultExplain = bearMsg[ranNum];
+            break;
+
+        case "dinosaur":
+            resultTitle = rstTitle[3];
+            resultExplain = dinosaurMsg[ranNum];
+            break;
+
+        case "wolf":
+            resultTitle = rstTitle[4];
+            resultExplain = wolfMsg[ranNum];
+            break;
+
+        case "horse":
+            resultTitle = rstTitle[5];
+            resultExplain = horseMsg[ranNum];
+            break;
+
+        case "snake":
+            resultTitle = rstTitle[6];
+            resultExplain = snakeMsg[ranNum];
+            break;
+
+        case "fox":
+            resultTitle = rstTitle[7];
+            resultExplain = foxMsg[ranNum];
+            break;
+
+        case "monkey":
+            resultTitle = rstTitle[8];
+            resultExplain = monkeyMsg[ranNum];
+            break;
+
+        case "mouse":
+            resultTitle = rstTitle[9];
+            resultExplain = mouseMsg[ranNum];
+            break;
+
+        case "rabbit":
+            resultTitle = rstTitle[10];
+            resultExplain = rabbitMsg[ranNum];
+            break;
+
+        default:
+            resultTitle = "該当なし";
+            resultExplain = ""
 
         }
-    } else {
-
-        switch (prediction[0].className) {
-            case "dog":
-                resultTitle = "可愛いコイヌ顔";
-                resultExplain = "愛らしくて魅力的な顔、다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!";
-                break;
-                
-            case "cat":
-                resultTitle = "ツンデレネコ顔";
-                resultExplain = "무뚝뚝한 당신의 첫인상은 차가워 보이지만 묘한 매력을 풍겨 언제나 인기가 넘친다. 자존심이 세계 1등과 맞먹지만 관심 받는 것을 좋아하고 연인에게는 은근히 애교쟁이다. 시크한 츤데레로 연인에게 끊임없이 설렘을 안겨주는 당신은 고양이와 닮았다!";
-                break;
-                
-            case "bear":
-                resultTitle = "暖かいクマ顔";
-                resultExplain = "첫 인상은 무서워 보이지만 알고 보면 귀여운 매력의 당신! 꼼꼼하고 섬세한 성격으로 연인을 헌신적으로 챙겨주는 당신은 연인에게 듬직한 존재! 포근한 매력에 듬직함까지 갖춘 최고의 남자다!";
-                break;
-                
-            case "dinosaur":
-                resultTitle = "따뜻한 나쁜남자 キョウリュウ顔";
-                resultExplain = "무심한 성격에 첫인상은 나쁜 남자 같지만, 알고 보면 따뜻함이 묻어나는 당신! 시크한 매력에 선뜻 다가가지 못하지만 한번 다가가면 헤어나올 수 없는 터프한 매력을 가진 카리스마 있는 남자다.";
-                break;
-                
-            case "wolf":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-                
-            case "horse":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-                
-            case "snake":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-                
-            case "fox":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-            
-            case "monkey":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-            
-            case "mouse":
-                resultTitle = "";
-                resultExplain = "";
-                break;
-                
-            case "rabbit":
-                resultTitle = "천진난만한 매력의 ウサギ顔";
-                resultExplain = "천진난만하고 귀여운 당신은 주변 사람들에게 기쁨을 주는 행복바이러스다! 호기심이 많아 활발하며 귀엽고 순수한 외모로 연인의 보호본능을 자극한다. 존재 자체가 상큼한 당신은 특별한 애교 없이도 연인에게 너무나도 사랑스럽다!";
-                break;
-                
-            default:
-                resultTitle = "該当なし";
-                resultExplain = "";
-
-        }
-    }
-    
     
     var title = "<div class='" + prediction[0].className + "-animal-title animal-title'>" + resultTitle + "</div>";
     var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>";

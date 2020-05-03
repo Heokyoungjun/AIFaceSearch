@@ -1,16 +1,25 @@
 #label-container {
     width: 90%;
     margin: 0 auto;
+    padding-top: 30px;
 }
 
 .animal-explain {
-    font-size: 1.5rem;
-    width: 90%;
-    margin: 0 auto;
+   font-size: 1.5rem;
+   width: 90%;
+   margin: 0 auto;
+   color: #fff;
+   padding: 20px;
+   font-size: 22px;
+   background: #FEA993;
+   border: 2px dashed #F7F9CC;
+   border-radius: 10px;
+   box-shadow: 0 0 0 7px #FEA993;
 }
 
 .animal-title {
     font-size: 2rem;
+    padding-bottom: 30px;
 }
 
 .bar-container {

@@ -1,7 +1,9 @@
 body {
-  font-family: sans-serif, "Nico Moji";
+  font-family: sans-serif, 'Nico Moji', 'Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4';
   background-color: #ffffff;
-    color: #35465d;
+  color: #35465d;
+  padding: 5px 20px;
+  font-weight: bold;
 }
 
 .title-img {
@@ -103,6 +105,7 @@ body {
     text-align: center;
     color: #ffffff;
     padding: 4px 15px;
+    font-weight: bold;
 }
 
 .drag-text {

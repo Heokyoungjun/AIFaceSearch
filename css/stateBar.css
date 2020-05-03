@@ -10,7 +10,6 @@
    margin: 0 auto;
    color: #fff;
    padding: 20px;
-   font-size: 22px;
    background: #FEA993;
    border: 2px dashed #F7F9CC;
    border-radius: 10px;
@@ -18,7 +17,7 @@
 }
 
 .animal-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding-bottom: 30px;
 }
 

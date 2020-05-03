@@ -81,7 +81,7 @@ async function predict() {
     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
     var rsMsg;
     var resultTitle, resultExplain;
-    var ranNum = Math.floor(Math.random()*(4)) + 1;
+    var ranNum = Math.floor(Math.random()*(4));
     switch (prediction[0].className) {
         case "dog":
             resultTitle = rstTitle[0];

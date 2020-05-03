@@ -5,6 +5,12 @@
 
 .animal-explain {
     font-size: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.animal-title {
+    font-size: 2rem;
 }
 
 .bar-container {

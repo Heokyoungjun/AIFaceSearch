@@ -118,63 +118,63 @@
 
 	var cards = [
 		{
-			name: "php",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/php-logo_1.png",
+			name: "bear",
+			img: "img/animal/bear.png",
 			id: 1,
 		},
 		{
-			name: "css3",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/css3-logo.png",
+			name: "cat",
+			img: "img/animal/cat.png",
 			id: 2
 		},
 		{
-			name: "html5",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/html5-logo.png",
+			name: "dinosaur",
+			img: "img/animal/dinosaur.png",
 			id: 3
 		},
 		{
-			name: "jquery",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/jquery-logo.png",
+			name: "dog",
+			img: "img/animal/dog.png",
 			id: 4
 		}, 
 		{
-			name: "javascript",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/js-logo.png",
+			name: "fox",
+			img: "img/animal/fox.png",
 			id: 5
 		},
 		{
-			name: "node",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/nodejs-logo.png",
+			name: "horse",
+			img: "img/animal/horse.png",
 			id: 6
 		},
 		{
-			name: "photoshop",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/photoshop-logo.png",
+			name: "monkey",
+			img: "img/animal/monkey.png",
 			id: 7
 		},
 		{
-			name: "python",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/python-logo.png",
+			name: "mouse",
+			img: "img/animal/mouse.png",
 			id: 8
 		},
 		{
-			name: "rails",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/rails-logo.png",
+			name: "rabbit",
+			img: "img/animal/rabbit.png",
 			id: 9
 		},
 		{
-			name: "sass",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/sass-logo.png",
+			name: "snake",
+			img: "img/animal/snake.png",
 			id: 10
 		},
 		{
-			name: "sublime",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/sublime-logo.png",
+			name: "wolf",
+			img: "img/animal/wolf.png",
 			id: 11
 		},
 		{
-			name: "wordpress",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/wordpress-logo.png",
+			name: "llama",
+			img: "img/animal/llama.png",
 			id: 12
 		},
 	];

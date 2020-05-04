@@ -1,6 +1,8 @@
 body {
   background-color: #c4d6a7;
-  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif, 'Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4';
+      color: #35465d;
+  font-weight: bold;
 }
 
 .labels {

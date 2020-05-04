@@ -3,138 +3,71 @@
 
 <head>
     <!-- Required meta tags -->
-    <meta name="keywords" content="どうぶつ顔診断, どうぶつ, 顔, 診断, テスト, test">
-    <meta name="description" content="どうぶつ顔診断">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="google-site-verification" content="IvUdmbBkcyC-08BaVNYBtczBig-JAHoX3V9FVKkgPR4" />
+    <meta name="keywords" content="どうぶつ顔診断, どうぶつ, 顔, 診断, テスト, test, かお, カオ, しんだん, シンダン, どうぶ" />
+    <meta name="description" content="ninoplay let's play" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="msvalidate.01" content="684AEFD09C14BD0EABA38DD84883A7B0" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>どうぶつ顔診断</title>
-    <!-- <link rel="shortcut icon" href="img/doubutu.ico" type="image/x-icon"> -->
-    <link rel="icon" href="img/doubutu.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/loading.css">
-    <link rel="stylesheet" href="css/stateBar.css">
-    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ea992a7f386c660"></script>
+    <title>ninoplay</title>
+    <link rel="icon" href="img/doubutu.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mainbg.css" />
+    <link rel="stylesheet" href="css/menubar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-    <script type="text/javascript" src="js/readAI.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/mainbg.js"></script>
+    <script type="text/javascript" src="js/menubar.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/OrbitControls.js"></script>
+    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/Cat.js"></script>
+
 </head>
 
 <body>
-    <div id="menu"></div>
-    <section class="section">
-        <div class="title-img">
-            <img src="img/doubutu.png" style="width:100%;height:100%;">
-        </div>
-    </section>
-    <section class="d-flex justify-content-center" style="padding: 20px;">
-        <img src="img/doubutu_woman.png" style="width:70px;height:70px;padding-right:20px;padding-bottom:10px;">
-        <input type="checkbox" id="gender">
-        <label for="gender">
-            <span class="knob">
-                <i></i>
-            </span>
-        </label>
-        <img src="img/doubutu_man.png" style="width:70px;height:70px;padding-left:15px;padding-bottom:10px;">
-    </section>
-    <div class="container file-upload mb-5">
-        <div class="image-upload-wrap" style="width:70%; margin:0 auto;">
-            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-            <div class="drag-text">
-                <img src="img/upload-icon.png" alt="" class="mt-5 upload" style="width:20%">
-                <h3 class="upload-text">写真追加</h3>
-            </div>
-        </div>
-        <div class="file-upload-content">
-            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-            <div id="loading" class="cat">
-                <div class="cat__body"></div>
-                <div class="cat__body"></div>
-                <div class="cat__tail"></div>
-                <div class="cat__head"></div>
-            </div>
-            <p class="result-message"></p>
-            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
-
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <div class="addthis_inline_share_toolbox"></div>
-
-            <div class="pt-5 image-title-wrap">
-                <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
-                    <span class="try-again-text">リトライ</span>
-                </button>
-            </div>
-        </div>
+    <div class="toggle">
+        <a>
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
-    <div id="webcam-container"></div>
-    <script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="player61-22"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="JP"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="auto"; amzn_assoc_height ="auto"; amzn_assoc_default_search_category =""; amzn_assoc_default_search_key ="";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
-<script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="1b6f32bb.ce9b0601.1b6f32bc.8bbb1cde";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_size="300x160";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";rakuten_ts="1588560293840";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
-    <a href="https://hb.afl.rakuten.co.jp/hsc/1b6f34a7.c1235e1a.1b6f341a.d06d7059/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjowLCJjYXQiOiIxMDIiLCJiYW4iOiIxNTI0MTUzIn0%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hsb/1b6f34a7.c1235e1a.1b6f341a.d06d7059/?me_id=1&me_adv_id=1524153&t=pict" border="0" style="margin:2px" alt="" title=""></a>
-    <div id="disqus_thread" class="dis-th" style="max-width:700px;"></div>
-    <div class="iconpr">
-        <div>아이콘 제작자
-            <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from
-            <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
-        </div>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="AIanimalmatching.html">どうぶつ顔診断</a>
+            </li>
+            <!-- <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact Us</a>
+            </li> -->
+        </ul>
     </div>
 
-    <script>
-        (function() {
-            var d = document,
-                s = d.createElement('script');
-            s.src = 'https://funy-nino.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the
-        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript>
+    <div id="world" />
 
+    <div id="credits">
+        <p>
+            <a href="http://babeltheking.com" target="blank">Babel the king</a> |
+            <a href="https://codepen.io/Yakudoo/" target="blank">my other codepens</a> |
+            <a href="https://www.epic.net" target="blank">epic.net</a>
+        </p>
+    </div>
+</body>
 
-
-<!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+<!-- Copyright (c) 2020 by Karim Maaloul (https://codepen.io/Yakudoo/pen/oXJYxy)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
-
-<!-- Copyright (c) 2020 by Mert Cukuren (https://codepen.io/knyttneve/pen/bPpEZY)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
-
-<!-- Copyright (c) 2020 by Rplus (https://codepen.io/Rplus/pen/PWZYRM)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- -->
-<!-- Copyright (c) 2020 by Mana (https://codepen.io/manabox/pen/GgQVdJ)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- -->
 
 </html>

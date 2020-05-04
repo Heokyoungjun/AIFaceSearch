@@ -1,10 +1,3 @@
-$(document).ready(function(){
-         $("#menu").load("MenuCommon.html")
-        /* id 지정을 통해서도 가능합니다. 
-         $("#header").load("header.html #navbar")
-         */       
-      });
-
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();

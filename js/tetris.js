@@ -741,3 +741,24 @@ $("#left").click(function() {
 $("#right").click(function() {
   board.rightKeyPress();
 });
+
+
+$("#new-game").touchstart(function() {
+  board.newGame();
+});
+
+$("#down").touchstart(function() {
+  board.downKeyPress();
+});
+
+$("#rotate").touchstart(function() {
+  board.upKeyPress();
+});
+
+$("#left").touchstart(function() {
+  board.leftKeyPress();
+});
+
+$("#right").touchstart(function() {
+  board.rightKeyPress();
+});

@@ -743,22 +743,22 @@ $("#right").click(function() {
 });
 
 
-$("#new-game").touchstart(function() {
+$("#new-game").on("touchstart", function() {
   board.newGame();
 });
 
-$("#down").touchstart(function() {
+$("#down").on("touchstart",function() {
   board.downKeyPress();
 });
 
-$("#rotate").touchstart(function() {
+$("#rotate").on("touchstart",function() {
   board.upKeyPress();
 });
 
-$("#left").touchstart(function() {
+$("#left").on("touchstart",function() {
   board.leftKeyPress();
 });
 
-$("#right").touchstart(function() {
+$("#right").on("touchstart",function() {
   board.rightKeyPress();
 });

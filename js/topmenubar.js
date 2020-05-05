@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	
 	$('.sub-menu').hide();
 	
 	$('#principale li').mouseover(function(){

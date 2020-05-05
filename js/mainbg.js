@@ -19,7 +19,7 @@ var HEIGHT,
   WIDTH,
   windowHalfX,
   windowHalfY,
-  mousePos = { x: 0, y: 0 },
+  mousePos = { x: 200, y: 200 },
   oldMousePos = { x: 0, y: 0 },
   ballWallDepth = 28;
 
@@ -83,13 +83,13 @@ function handleWindowResize() {
 }
 
 function handleMouseMove(event) {
-  mousePos = { x: event.clientX, y: event.clientY };
+  mousePos = { x: event.clientX, y: event.clientY-150 };
 }
 
 function handleTouchMove(event) {
   if (event.touches.length == 1) {
     event.preventDefault();
-    mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
+    mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY-150 };
   }
 }
 

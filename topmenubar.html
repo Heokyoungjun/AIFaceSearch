@@ -1,40 +1,63 @@
-<!DOCTYPE html>
-<html lang="en" >
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Simple inline menu whit easing effect on submenu</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="./style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/topmenubar.css">
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<div id="wrapper">
-  
-  <ul id="principale">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Portfolio</a></li>
-    <li><a href="#">Collaborazioni</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Contatti</a></li>
-    <li><a>Social</a>
-        <ul class="sub-menu">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Google+</a></li>
-            <li><a href="#">Tumbrl</a></li>
-            <li><a href="#">Pinterest</a></li>
-            <li><a href="#">Instagram</a></li>
-        </ul>
-	  </li>
-  </ul>
-  
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script><script  src="./script.js"></script>
 
+<body>
+    <!-- partial:index.partial.html -->
+    <div id="wrapper">
+
+        <ul id="principale">
+            <li>
+                <a href="index.html" target="_PARENT">Home</a>
+            </li>
+            <li>
+                <a href="#" target="_PARENT">Blog</a>
+            </li>
+            <li>
+                <a>Ai</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="AIanimalmatching.html" target="_PARENT">どうぶつ顔診断</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <a>game</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="MemoryGame.html" target="_PARENT">memory game</a>
+                    </li>
+                    <li>
+                        <a href="sudoku.html" target="_PARENT">sudoku</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="#">Google+</a>
+                    </li>
+                    <li>
+                        <a href="#">Tumbrl</a>
+                    </li>
+                    <li>
+                        <a href="#">Pinterest</a>
+                    </li>
+                    <li>
+                        <a href="#">Instagram</a>
+                    </li> -->
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src="js/topmenubar.js"></script>
 </body>
+
 </html>

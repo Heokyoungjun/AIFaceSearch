@@ -119,62 +119,62 @@
 	var cards = [
 		{
 			name: "bear",
-			img: "img/animal/bear.png",
+			img: "../../img/animal/bear.png",
 			id: 1,
 		},
 		{
 			name: "cat",
-			img: "img/animal/cat.png",
+			img: "../../img/animal/cat.png",
 			id: 2
 		},
 		{
 			name: "dinosaur",
-			img: "img/animal/dinosaur.png",
+			img: "../../img/animal/dinosaur.png",
 			id: 3
 		},
 		{
 			name: "dog",
-			img: "img/animal/dog.png",
+			img: "../../img/animal/dog.png",
 			id: 4
 		}, 
 		{
 			name: "fox",
-			img: "img/animal/fox.png",
+			img: "../../img/animal/fox.png",
 			id: 5
 		},
 		{
 			name: "horse",
-			img: "img/animal/horse.png",
+			img: "../../img/animal/horse.png",
 			id: 6
 		},
 		{
 			name: "monkey",
-			img: "img/animal/monkey.png",
+			img: "../../img/animal/monkey.png",
 			id: 7
 		},
 		{
 			name: "mouse",
-			img: "img/animal/mouse.png",
+			img: "../../img/animal/mouse.png",
 			id: 8
 		},
 		{
 			name: "rabbit",
-			img: "img/animal/rabbit.png",
+			img: "../../img/animal/rabbit.png",
 			id: 9
 		},
 		{
 			name: "snake",
-			img: "img/animal/snake.png",
+			img: "../../img/animal/snake.png",
 			id: 10
 		},
 		{
 			name: "wolf",
-			img: "img/animal/wolf.png",
+			img: "../../img/animal/wolf.png",
 			id: 11
 		},
 		{
 			name: "llama",
-			img: "img/animal/llama.png",
+			img: "../../img/animal/llama.png",
 			id: 12
 		},
 	];

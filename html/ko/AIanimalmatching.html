@@ -3,7 +3,7 @@
 
 <head>
     <!-- Required meta tags -->
-    <meta name="keywords" content="どうぶつ顔診断, どうぶつ, 顔, 診断, テスト, test, かお, カオ, しんだん, シンダン, どうぶつ, AI, face">
+    <meta name="keywords" content="동물형얼굴, 동물, 얼굴, 진단, 테스트, test, AI, face">
     <meta name="description" content="ninoplayで楽しく遊ぼう。">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,22 +27,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-    <script type="text/javascript" src="../../js/ja/readAI.js"></script>
+    <script type="text/javascript" src="../../js/ko/readAI.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script data-ad-client="ca-pub-9950420986230228" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166010656-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166010656-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-166010656-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-166010656-1');
+    </script>
 </head>
 
-<body>
-    <iframe src="../common/ja/topmenubar.html" style="border:none;width:100%;height:120px; overflow-x:none" scrolling="yes"></iframe>
+<body onload="onload()">
+    <iframe src="../common/ko/topmenubar.html" style="border:none;width:100%;height:120px; overflow-x:none" scrolling="yes"></iframe>
     <section class="section">
         <div class="title-img">
             <img src="../../img/doubutu.png" style="width:100%;height:100%;">
@@ -58,13 +60,13 @@
         </label>
         <img src="../../img/doubutu_man.png" style="width:70px;height:70px;padding-left:15px;padding-bottom:10px;">
     </section>
-    
+
     <div class="container file-upload mb-5">
         <div class="image-upload-wrap" style="width:70%; margin:0 auto;">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
                 <img src="../../img/upload-icon.png" alt="" class="mt-5 upload" style="width:20%">
-                <h3 class="upload-text">写真追加</h3>
+                <h3 class="upload-text">Photo File Update</h3>
             </div>
         </div>
         <div class="file-upload-content">
@@ -83,7 +85,7 @@
 
             <div class="pt-5 image-title-wrap">
                 <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
-                    <span class="try-again-text">リトライ</span>
+                    <span class="try-again-text">RETRY</span>
                 </button>
             </div>
         </div>
@@ -100,10 +102,10 @@
     </div>
 
     <script>
-        (function() {
+        (function() { // DON'T EDIT BELOW THIS LINE
             var d = document,
                 s = d.createElement('script');
-            s.src = 'https://funy-nino.disqus.com/embed.js';
+            s.src = 'https://https-ninoplay-site.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
@@ -112,7 +114,6 @@
         <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     </noscript>
 </body>
-
 
 <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
@@ -146,4 +147,5 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  -->
+
 </html>

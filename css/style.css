@@ -1,5 +1,11 @@
+@font-face { 
+    font-family: 'Katuri'; 
+    src: url(../font/Katuri.ttf) format('truetype'); 
+}
+
+
 body {
-  font-family: sans-serif, 'Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4';
+  font-family: sans-serif, 'Katuri','ヒラギノ丸ゴ Pro W4';
   background-color: #ffffff;
   color: #35465d;
   font-weight: bold;

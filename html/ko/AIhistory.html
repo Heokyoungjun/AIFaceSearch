@@ -3,8 +3,8 @@
 
 <head>
     <!-- Required meta tags -->
-    <meta name="keywords" content="동물형얼굴, 동물, 얼굴, 진단, 테스트, test, AI, face">
-    <meta name="description" content="ninoplayで楽しく遊ぼう。">
+    <meta name="keywords" content="관상, 얼굴">
+    <meta name="description" content="顔占い">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="google-site-verification" content="IvUdmbBkcyC-08BaVNYBtczBig-JAHoX3V9FVKkgPR4" />
@@ -12,14 +12,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>ninoplay</title>
-    <!-- <link rel="shortcut icon" href="img/doubutu.ico" type="image/x-icon"> -->
-    <link rel="icon" href="../../img/doubutu.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/AIanimalmatching.css">
-    <link rel="stylesheet" href="../../css/loading.css">
-    <link rel="stylesheet" href="../../css/stateBar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+    <title>관상</title>
+    <link rel="icon" href="img/doubutu.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/stateBar.css">
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ea992a7f386c660"></script>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -27,46 +24,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-    <script type="text/javascript" src="../../js/ko/readAI.js"></script>
+    <script type="text/javascript" src="js/readAI.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script data-ad-client="ca-pub-9950420986230228" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166010656-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-166010656-1');
-    </script>
 </head>
 
-<body onload="onload()">
-    <iframe src="../common/ko/topmenubar.html" style="border:none;width:100%;height:120px; overflow-x:none" scrolling="yes"></iframe>
+<body>
+    <div id="menu"></div>
     <section class="section">
         <div class="title-img">
-            <img src="../../img/doubutu_kr.png" style="width:100%;height:100%;">
+            <img src="img/doubutu.png" style="width:100%;height:100%;">
         </div>
     </section>
     <section class="d-flex justify-content-center" style="padding: 20px;">
-        <img src="../../img/doubutu_woman.png" style="width:70px;height:70px;padding-right:20px;padding-bottom:10px;">
+        <img src="img/doubutu_woman.png" style="width:70px;height:70px;padding-right:20px;padding-bottom:10px;">
         <input type="checkbox" id="gender">
         <label for="gender">
             <span class="knob">
                 <i></i>
             </span>
         </label>
-        <img src="../../img/doubutu_man.png" style="width:70px;height:70px;padding-left:15px;padding-bottom:10px;">
+        <img src="img/doubutu_man.png" style="width:70px;height:70px;padding-left:15px;padding-bottom:10px;">
     </section>
-
+    
     <div class="container file-upload mb-5">
         <div class="image-upload-wrap" style="width:70%; margin:0 auto;">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
-                <img src="../../img/upload-icon.png" alt="" class="mt-5 upload" style="width:20%">
-                <h3 class="upload-text">Photo File Update</h3>
+                <img src="img/upload-icon.png" alt="" class="mt-5 upload" style="width:20%">
+                <h3 class="upload-text">写真追加</h3>
             </div>
         </div>
         <div class="file-upload-content">
@@ -85,15 +70,16 @@
 
             <div class="pt-5 image-title-wrap">
                 <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
-                    <span class="try-again-text">RETRY</span>
+                    <span class="try-again-text">リトライ</span>
                 </button>
             </div>
         </div>
     </div>
     <div id="webcam-container"></div>
     <div style="max-width:700px; margin: 0 auto;">
-        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1jer2gzkvqb03" data-ad-width="320" data-ad-height="100"></ins>
-        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    <script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="player61-22"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="JP"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="auto"; amzn_assoc_height ="auto"; amzn_assoc_default_search_category =""; amzn_assoc_default_search_key ="";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
+<script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="1b6f32bb.ce9b0601.1b6f32bc.8bbb1cde";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_size="300x160";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";rakuten_ts="1588560293840";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
+    <a href="https://hb.afl.rakuten.co.jp/hsc/1b6f34a7.c1235e1a.1b6f341a.d06d7059/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjowLCJjYXQiOiIxMDIiLCJiYW4iOiIxNTI0MTUzIn0%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hsb/1b6f34a7.c1235e1a.1b6f341a.d06d7059/?me_id=1&me_adv_id=1524153&t=pict" border="0" style="margin:2px" alt="" title=""></a>
     </div>
     <div id="disqus_thread" class="dis-th" style="max-width:700px;"></div>
     <div class="iconpr">
@@ -104,10 +90,10 @@
     </div>
 
     <script>
-        (function() { // DON'T EDIT BELOW THIS LINE
+        (function() {
             var d = document,
                 s = d.createElement('script');
-            s.src = 'https://https-ninoplay-site.disqus.com/embed.js';
+            s.src = 'https://funy-nino.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
@@ -115,7 +101,8 @@
     <noscript>Please enable JavaScript to view the
         <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     </noscript>
-</body>
+
+
 
 <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 

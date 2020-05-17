@@ -3,6 +3,13 @@ let model, labelContainer, maxPredictions;
 var rstTitlelMap = newMap();
 var details = newMap();
 var link = newMap();
+var dataset = [
+    { name: 'Data', percent: 39.10 },
+    { name: 'Chrome', percent: 32.51 },
+    { name: 'Safari', percent: 13.68 },
+    { name: 'Firefox', percent: 8.71 },
+    { name: 'Others', percent: 6.01 }
+];
 
 
 // AI링크 읽기
@@ -12,6 +19,7 @@ function readURL(input) {
         reader.onload = function(e) {
             $('.image-upload-wrap').hide();
             $('#loading').show();
+            $('.widget').hide();
             $('.file-upload-image').attr('src', e.target.result);
             $('.file-upload-content').show();
             $('.image-title').html(input.files[0].name);
@@ -20,7 +28,10 @@ function readURL(input) {
         init().then(() => {
             predict();
             $('#loading').hide();
+            $('.widget').show();
         });
+        var javascriptDiv= "<script type='text/javascript' src='../../js/ko/circleChart.js'></script>"
+        $('.javascriptDiv').html(javascriptDiv);
     } else {
         removeUpload();
     }
@@ -43,14 +54,6 @@ async function init() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
     model = await tmImage.load(modelURL, metadataURL);
-    // maxPredictions = model.getTotalClasses();
-    maxPredictions = 5;
-    labelContainer = document.getElementById("label-container");
-    for (let i = 0; i < maxPredictions; i++) {
-        var em = document.createElement("div")
-        em.classList.add("d-flex");
-        labelContainer.appendChild(em);
-    }
 }
 
 // AI 결과 분석 및 화면 셋팅
@@ -72,19 +75,6 @@ async function predict() {
     var explain = "<div class='animal-explain pt-2'>" + resultDetails + "</div>";
 
     $('.result-message').html(title + explain);
-    var barWidth;
-    for (let i = 0; i < maxPredictions; i++) {
-        if (prediction[i].probability.toFixed(2) > 0.1) {
-            barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
-        } else if (prediction[i].probability.toFixed(2) >= 0.01) {
-            barWidth = "4%"
-        } else {
-            barWidth = "2%"
-        }
-        var label = "<img src='../../img/animal/" + prediction[i].className + ".png' alt='' style='width:12%;height:12%;padding-right:10px'>";
-        var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box animal-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar animal-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>";
-        labelContainer.childNodes[i].innerHTML = label + bar;
-    }
 }
 
 // 초기화면 로딩시 호출

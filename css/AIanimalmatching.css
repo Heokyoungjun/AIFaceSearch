@@ -16,6 +16,17 @@
    
 }
 
+.file-upload2 {
+    padding : 5% 3%; 
+    margin: 0 auto;
+    border-radius: 10px;
+    border: solid 1.5px #6ecccc;;
+    background-color: #6ecccc;;
+    max-width: 700px;
+    max-height: 1500px;
+   
+}
+
 .file-upload-btn {
   width: 100%;
   margin: 0;

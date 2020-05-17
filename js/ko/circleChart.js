@@ -1,11 +1,3 @@
-var dataset = [
-    { name: 'Data', percent: 39.10 },
-    { name: 'Chrome', percent: 32.51 },
-    { name: 'Safari', percent: 13.68 },
-    { name: 'Firefox', percent: 8.71 },
-    { name: 'Others', percent: 6.01 }
-];
- 
 var pie=d3.layout.pie()
   .value(function(d){return d.percent})
   .sort(null)
@@ -27,7 +19,7 @@ var svg=d3.select("#chart")
   .attr({
       width:w,
       height:h,
-      class:'shadow'
+      class:'shadow-local'
   }).append('g')
   .attr({
       transform:'translate('+w/2+','+h/2+')'
@@ -44,7 +36,7 @@ var path=svg.selectAll('path')
   });
  
 path.transition()
-  .duration(1000)
+  .duration(4000)
   .attrTween('d', function(d) {
       var interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d);
       return function(t) {
@@ -114,4 +106,4 @@ var restOfTheData=function(){
         });
 };
  
-setTimeout(restOfTheData,1000);
+setTimeout(restOfTheData,4000);

@@ -36,7 +36,7 @@ var path=svg.selectAll('path')
   });
  
 path.transition()
-  .duration(4000)
+  .duration(1000)
   .attrTween('d', function(d) {
       var interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d);
       return function(t) {
@@ -106,4 +106,4 @@ var restOfTheData=function(){
         });
 };
  
-setTimeout(restOfTheData,4000);
+setTimeout(restOfTheData,1000);

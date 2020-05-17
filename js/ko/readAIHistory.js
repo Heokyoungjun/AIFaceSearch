@@ -4,13 +4,12 @@ var rstTitlelMap = newMap();
 var details = newMap();
 var link = newMap();
 var dataset = [
-    { name: 'Data', percent: 39.10 },
-    { name: 'Chrome', percent: 32.51 },
-    { name: 'Safari', percent: 13.68 },
-    { name: 'Firefox', percent: 8.71 },
-    { name: 'Others', percent: 6.01 }
+    { name: '', percent: 0 },
+    { name: '', percent: 0 },
+    { name: '', percent: 0 },
+    { name: '', percent: 0 },
+    { name: '', percent: 0 }
 ];
-
 
 // AI링크 읽기
 function readURL(input) {
@@ -18,7 +17,7 @@ function readURL(input) {
         var reader = new FileReader();
         reader.onload = function(e) {
             $('.image-upload-wrap').hide();
-            $('#loading').show();
+            $('.loading').show();
             $('.widget').hide();
             $('.file-upload-image').attr('src', e.target.result);
             $('.file-upload-content').show();
@@ -27,11 +26,10 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
         init().then(() => {
             predict();
-            $('#loading').hide();
+            $('.loading').hide();
             $('.widget').show();
         });
-        var javascriptDiv= "<script type='text/javascript' src='../../js/ko/circleChart.js'></script>"
-        $('.javascriptDiv').html(javascriptDiv);
+
     } else {
         removeUpload();
     }
@@ -71,10 +69,18 @@ async function predict() {
     resultDetails = details.get(historyKind);
     resultLink = link.get(historyKind);
     
-    var title = "<div class='" + prediction[0].className + "-animal-title animal-title'><a href='" + resultLink + "' style='color:black'>" + resultTitle + "</a></div>";
+    var title = "<div class='" + prediction[0].className + "-animal-title animal-title'><a href='" + resultLink + "' style='color:white' target='_blank'>" + resultTitle + "</a></div>";
     var explain = "<div class='animal-explain pt-2'>" + resultDetails + "</div>";
 
     $('.result-message').html(title + explain);
+    
+    for (let i = 0; i < 5; i++) {
+        dataset[i].name = rstTitlelMap.get(prediction[i].className);
+        dataset[i].percent = Math.round(prediction[i].probability.toFixed(4) * 100);
+    }
+    
+    var javascriptDiv= "<script type='text/javascript' src='../../js/ko/circleChart.js'></script>"
+    $('.javascriptDiv').html(javascriptDiv);
 }
 
 // 초기화면 로딩시 호출

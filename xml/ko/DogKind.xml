@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dogKind>
+    <goldenRetriever>
+        <name-ko>골든리트리버</name-ko>
+        <name-en>Golden Retriever</name-en>
+        <detail>근육질의 몸에 건강하고 산뜻한 느낌을 준다. 금색의 윤기나는 털을 가지고 있는데, 속털은 방수성이고 겉털은 탄력성이 있다. 잡은 사냥감을 찾아오록 훈련되었다. 겉털은 속털은 추위와 물로부터 몸을 보호해 주어 물 속의 사냥감을 잘 물어온다. 수영을 잘하고 냄새를 잘 맡으며 쉽게 훈련시킬 수 있다. 몸집이 크지만 대소변을 가리며 집안에서도 키울 수 있다. 단지 너무 살이 찌지 않도록 성장기에 체중관리를 해 주어야 한다. 온순하며 참을성이 많고 주인에 대한 충성심과 헌신적인 성격으로 일명 천사견으로 불린다.</detail>
+        <life>10-12년</life>
+        <origin>스코틀랜드, 잉글랜드</origin>
+        <character>믿음직한, 우호적인, 부드러운, 자신감에 차있는, 신뢰할 만한, 총명한</character>
+    </goldenRetriever>
+    <goldenRetriever>
+        <name-ko></name-ko>
+        <name-en></name-en>
+        <detail></detail>
+        <life></life>
+        <origin></origin>
+        <character></character>
+    </goldenRetriever>
+</dogKind>

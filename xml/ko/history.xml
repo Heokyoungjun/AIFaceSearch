@@ -3,114 +3,131 @@
     <dagun>
         <rsTitel>단군왕검</rsTitel>
         <details>초기국가시대 고조선을 건국한 단군의 칭호로 우리 민족의 시조.</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EB%8B%A8%EA%B5%B0%EC%99%95%EA%B2%80&ridx=2&tot=4</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EB%8B%A8%EA%B5%B0%EC%99%95%EA%B2%80&amp;ridx=2&amp;tot=4</link>
     </dagun>
     <dongmyung>
         <rsTitel>동명성왕</rsTitel>
         <details>삼국시대 고구려 제1대(재위:BCE.37~BCE. 19) 왕.</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EB%8F%99%EB%AA%85%EC%84%B1%EC%99%95&ridx=0&tot=4</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EB%8F%99%EB%AA%85%EC%84%B1%EC%99%95&amp;ridx=0&amp;tot=4</link>
     </dongmyung>
     <onjo>
         <rsTitel>온조왕</rsTitel>
         <details>삼국시대 백제의 제1대(재위:BCE.18~CE. 28) 왕.</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%98%A8%EC%A1%B0%EC%99%95&ridx=0&tot=8</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%98%A8%EC%A1%B0%EC%99%95&amp;ridx=0&amp;tot=8</link>
     </onjo>
     <geose>
         <rsTitel>혁거세 거서간</rsTitel>
         <details>삼국시대 신라의 제1대(재위: BCE.   57~CE. 4) 왕.</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%ED%98%81%EA%B1%B0%EC%84%B8&ridx=0&tot=6</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%ED%98%81%EA%B1%B0%EC%84%B8&amp;ridx=0&amp;tot=6</link>
     </geose>
     <kimyusin>
         <rsTitel>김유신</rsTitel>
         <details>삼국시대 신라의 삼국통일에 중추적인 역할을 담당한 장수.</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EA%B9%80%EC%9C%A0%EC%8B%A0&ridx=0&tot=101</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EA%B9%80%EC%9C%A0%EC%8B%A0&amp;ridx=0&amp;tot=101</link>
     </kimyusin>
-    <wonhyo>
-        <rsTitel>원효</rsTitel>
-        <details>삼국시대 신라의 『대혜도경종요』, 『금강반야경소』, 『화엄경소』 등을 저술한 승려.</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9B%90%ED%9A%A8&ridx=0&tot=158</link>
-    </wonhyo>
     <mongju>
         <rsTitel>정몽주</rsTitel>
         <details>고려후기 문하찬성사, 예문관제학, 인물추변도감제조관 등을 역임한 관리.학자, 문신.</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%A0%95%EB%AA%BD%EC%A3%BC&ridx=0&tot=64</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%A0%95%EB%AA%BD%EC%A3%BC&amp;ridx=0&amp;tot=64</link>
     </mongju>
     <eaea>
         <rsTitel>이이</rsTitel>
         <details>조선전기 정언, 지평, 장령 등을 역임한 문신.</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9C%A8%EA%B3%A1%EC%9D%B4%EC%9D%B4&ridx=0&tot=266</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9C%A8%EA%B3%A1%EC%9D%B4%EC%9D%B4&amp;ridx=0&amp;tot=266</link>
     </eaea>
     <sinsa>
         <rsTitel>신사임당</rsTitel>
         <details>조선전기 「자리도」의, 「초충도」의, 「노안도」 등의 작품을 그린 화가. 오만원권 지폐에 나오는 인물</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%8B%A0%EC%82%AC%EC%9E%84%EB%8B%B9&ridx=0&tot=18</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%8B%A0%EC%82%AC%EC%9E%84%EB%8B%B9&amp;ridx=0&amp;tot=18</link>
     </sinsa>
     <seolhun>
         <rsTitel>허난설헌</rsTitel>
         <details>조선전기 『난설헌집』을 저술한 시인.</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C&ridx=0&tot=5</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C&amp;ridx=0&amp;tot=5</link>
     </seolhun>
     <eahwang>
         <rsTitel>이황</rsTitel>
         <details>조선전기 성균관대사성, 대제학, 지경연 등을 역임한 문신.학자. 천원권 지폐에 나오는 인물</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9D%B4%ED%99%A9&ridx=0&tot=294</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9D%B4%ED%99%A9&amp;ridx=0&amp;tot=294</link>
     </eahwang>
-    <seojong>
+    <sejong>
         <rsTitel>세종대왕</rsTitel>
         <details>조선전기 제4대(재위:1418~1450) 왕. 만원권 지폐에 나오는 인물</details>                               
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%84%B8%EC%A2%85&ridx=0&tot=562</link>
-    </seojong>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%84%B8%EC%A2%85&amp;ridx=0&amp;tot=562</link>
+    </sejong>
     <sunsin>
         <rsTitel>이순신</rsTitel>
         <details>조선시대 정읍현감, 진도군수, 전라좌도수군절도사 등을 역임한 무신. 100원 화폐에 나오는 인물</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9D%B4%EC%88%9C%EC%8B%A0&ridx=0&tot=118</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9D%B4%EC%88%9C%EC%8B%A0&amp;ridx=0&amp;tot=118</link>
     </sunsin>
     <changho>
         <rsTitel>안창호</rsTitel>
-        <details>안창호는 대한제국의 교육개혁운동가 겸 애국계몽운동가이자 일제 강점기의 독립운동가, 교육자, 정치가이다. 그의 사후 1988년 3월 21일, 24일 도산 안창호 선생이 공부한 구세학당 즉, 경신중학교와 경신고등학교에서 그에게 명예 졸업장이 추서했다.</details>
-        <link>http://dh.aks.ac.kr/Encyves/wiki/index.php/%EC%95%88%EC%B0%BD%ED%98%B8</link>
+        <details>일제강점기 이토히로부미 암살사건, 상해 훙커우공원 폭탄사건 등과 관련된 독립운동가.교육자.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%95%88%EC%B0%BD%ED%98%B8&amp;ridx=0&amp;tot=22</link>
     </changho>
     <junggun>
         <rsTitel>안중근</rsTitel>
-        <details>안중근은 대한제국의 항일 의병장 겸 정치 사상가이다. 세례명은 토마스이다. 본관은 순흥, 고려 시대 후기의 유학자 안향의 26대손이다.</details>
+        <details>일제강점기 이토저격사건과 관련된 독립운동가.의병장, 의사(義士).</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%95%88%EC%A4%91%EA%B7%BC&amp;ridx=0&amp;tot=21</link>
     </junggun>
     <bongjun>
         <rsTitel>전봉준</rsTitel>
-        <details>조선 말기 동학농민운동 지도자로 일명 녹두장군이라 불렸다.</details>
-        <link>http://dh.aks.ac.kr/Encyves/wiki/index.php/%EC%A0%84%EB%B4%89%EC%A4%80</link>
+        <details>개항기 동학 접주, 동학농민군 대장 등을 역임한 지도자.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%A0%84%EB%B4%89%EC%A4%80&amp;ridx=0&amp;tot=21</link>
     </bongjun>
     <bonggil>
         <rsTitel>윤봉길</rsTitel>
         <details>일제강점기 훙커우공원 투탄의거와 관련된 독립운동가.의사(義士).</details>
-        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9C%A4%EB%B4%89%EA%B8%B8&ridx=0&tot=16</link>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9C%A4%EB%B4%89%EA%B8%B8&amp;ridx=0&amp;tot=16</link>
     </bonggil>
     <kimgu>
         <rsTitel>김구</rsTitel>
-        <details>김구는 일제강점기 독립운동가이자 대한민국의 통일운동가, 정치인이다. 의열단체 한인애국단을 이끌었고 대한민국 임시 정부 주석을 역임하였으며 1962년 '건국훈장 대한민국장'이 추서되었다.</details>
+        <details>일제강점기 안명근사건, 안중근 하얼빈 의거, 모스크바3상회의 등과 관련된 독립운동가.정치인.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EA%B9%80%EA%B5%AC&amp;ridx=4&amp;tot=71</link>
     </kimgu>
-    <dagun>
-        <rsTitel></rsTitel>
-        <details></details>
-    </dagun>
-        <dagun>
-        <rsTitel></rsTitel>
-        <details></details>
-    </dagun>
-        <dagun>
-        <rsTitel></rsTitel>
-        <details></details>
-    </dagun>
-        <dagun>
-        <rsTitel></rsTitel>
-        <details></details>
-    </dagun>
-        <dagun>
-        <rsTitel></rsTitel>
-        <details></details>
-    </dagun>
-        <dagun>
-        <rsTitel></rsTitel>
-        <details></details>
-    </dagun>
-    
+    <ugyu>
+        <rsTitel>강우규</rsTitel>
+        <details>일제강점기 신한촌노인단 길림성지부장을 역임한 독립운동가.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EA%B0%95%EC%9A%B0%EA%B7%9C&amp;ridx=0&amp;tot=2</link>
+    </ugyu>
+    <gwansun>
+        <rsTitel>유관순</rsTitel>
+        <details>일제강점기 아우내 3·1만세운동을 주도한 독립운동가.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9C%A0%EA%B4%80%EC%88%9C&amp;ridx=0&amp;tot=9</link>
+    </gwansun>
+    <maria>
+        <rsTitel>김마리아</rsTitel>
+        <details>일제강점기 대한민국애국부인회 회장, 상해애국부인회 의정원 의원 등을 역임한 독립운동가.교육자.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EA%B9%80%EB%A7%88%EB%A6%AC%EC%95%84&amp;ridx=0&amp;tot=3</link>
+    </maria>
+    <yongun>
+        <rsTitel>한용운</rsTitel>
+        <details>일제강점기 독립운동과 함께 『조선불교유신론』, 『님의 침묵』, 『흑풍』, 『후회』 등을 저술한 승려.시인, 독립운동가.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%ED%95%9C%EC%9A%A9%EC%9A%B4&amp;ridx=0&amp;tot=23</link>
+    </yongun>
+    <bongchang>
+        <rsTitel>이봉창</rsTitel>
+        <details>일제강점기 일왕투탄의거와 관련된 독립운동가.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9D%B4%EB%B4%89%EC%B0%BD&amp;ridx=0&amp;tot=2</link>
+    </bongchang>
+    <dongju>
+        <rsTitel>윤동주</rsTitel>
+        <details>일제강점기 『하늘과 바람과 별과 시』를 저술한 시인.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%9C%A4%EB%8F%99%EC%A3%BC&amp;ridx=0&amp;tot=7</link>
+    </dongju>
+    <zajin>
+        <rsTitel>김좌진</rsTitel>
+        <details>일제강점기 만주의 청산리대첩(백운평전투, 천수평전투, 어랑촌전투) 등과 관련된 독립운동가.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EA%B9%80%EC%A2%8C%EC%A7%84&amp;ridx=0&amp;tot=16</link>
+    </zajin>
+    <chaeho>
+        <rsTitel>신채호</rsTitel>
+        <details>일제강점기 『조선상고사』, 『조선상고문화사』, 『조선사연구초』 등을 저술한 학자.언론인, 독립운동가.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EC%8B%A0%EC%B1%84%ED%98%B8&amp;ridx=0&amp;tot=23</link>
+    </chaeho>
+    <giok>
+        <rsTitel>권기옥</rsTitel>
+        <details>일제강점기 남경 국민정부 항공서 부비항원, 대한애국부인회 사교부장 등을 역임한 독립운동가.비행사.</details>
+        <link>https://encykorea.aks.ac.kr/Contents/SearchNavi?keyword=%EA%B6%8C%EA%B8%B0%EC%98%A5&amp;ridx=0&amp;tot=403</link>
+    </giok>
 </history>

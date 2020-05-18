@@ -3,8 +3,8 @@
 
 <head>
     <!-- Required meta tags -->
-    <meta name="keywords" content="역사인물, 독립운동가, history, korean, An independent activist, independent, activist">
-    <meta name="description" content="역사인물 얼굴 매칭">
+    <meta name="keywords" content="강아지, 종류, 강아지 찾기, 찾기, 검색, dog, AI, face, search, kind">
+    <meta name="description" content="ninoplay">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="google-site-verification" content="IvUdmbBkcyC-08BaVNYBtczBig-JAHoX3V9FVKkgPR4" />
@@ -12,15 +12,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>역사인물 닮음꼴</title>
+    <title>ninoplay</title>
+    <!-- <link rel="shortcut icon" href="img/doubutu.ico" type="image/x-icon"> -->
     <link rel="icon" href="../../img/doubutu.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/AIanimalmatching.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="../../css/loading2.css">
+    <link rel="stylesheet" href="../../css/loading.css">
     <link rel="stylesheet" href="../../css/stateBar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
-    <link rel="stylesheet" href="../../css/circleChart.css">
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ea992a7f386c660"></script>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -28,8 +27,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-    <script type="text/javascript" src="../../js/ko/readAIHistory.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script type="text/javascript" src="../../js/ko/readAI.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script data-ad-client="ca-pub-9950420986230228" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -44,7 +42,6 @@
         gtag('config', 'UA-166010656-1');
         gtag('config', 'UA-166010656-2');
     </script>
-
 </head>
 
 <body onload="onload()">
@@ -54,8 +51,18 @@
             <img src="../../img/doubutu_kr.png" style="width:100%;height:100%;">
         </div>
     </section>
+    <section class="d-flex justify-content-center" style="padding: 20px;">
+        <img src="../../img/doubutu_woman.png" style="width:70px;height:70px;padding-right:20px;padding-bottom:10px;">
+        <input type="checkbox" id="gender">
+        <label for="gender">
+            <span class="knob">
+                <i></i>
+            </span>
+        </label>
+        <img src="../../img/doubutu_man.png" style="width:70px;height:70px;padding-left:15px;padding-bottom:10px;">
+    </section>
 
-    <div class="container file-upload2 mb-5">
+    <div class="container file-upload mb-5">
         <div class="image-upload-wrap" style="width:70%; margin:0 auto;">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
@@ -65,27 +72,14 @@
         </div>
         <div class="file-upload-content">
             <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-            <div class="loading">
-                <div class="counter">
-                    <p>MATCHING...</p>
-                    <h1>0%
-                        <!--
-                  h1.abs loading
-                  h1.abs.color loading
-                  -->
-                    </h1>
-                </div>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-                <script src="../../js/ko/loading.js"></script>
+            <div id="loading" class="cat">
+                <div class="cat__body"></div>
+                <div class="cat__body"></div>
+                <div class="cat__tail"></div>
+                <div class="cat__head"></div>
             </div>
-
             <p class="result-message"></p>
-
-            <div class="widget">
-                <!-- <div class="header">닮음 비율</div> -->
-                <div id="chart" class="chart-container"></div>
-            </div>
-            <div class="javascriptDiv"></div>
+            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
 
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <div class="addthis_inline_share_toolbox"></div>
@@ -95,25 +89,19 @@
                     <span class="try-again-text">RETRY</span>
                 </button>
             </div>
-            <div class="link">
-                <button type="button p-2" onclick="linksite()" class="try-again-btn2">
-                    <span class="try-again-text">참고문헌</span>
-                </button>
-            </div>
         </div>
     </div>
-    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1hrud2z9gdvea" data-ad-width="320" data-ad-height="100"></ins>
+    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-s1dxa6guy14l" data-ad-width="320" data-ad-height="100"></ins>
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <div id="webcam-container"></div>
-
     <div id="disqus_thread" class="dis-th" style="max-width:700px;"></div>
     <div class="iconpr">
         <div>아이콘 제작자
             <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from
             <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
         </div>
-        <div>참고 사이트(내용참고)
-            <a href="https://encykorea.aks.ac.kr/" title="Freepik">한국민족문화대백과사전</a>
+        <div>
+            <a href="http://qpapp119.blogspot.com/2016/04/blog-post_5.html">참조 블로그</a>
         </div>
     </div>
     <div style="text-align: right;">
@@ -121,19 +109,10 @@
         <img src="../../img/youtube-copy.png" class="youtube-copy">
     </div>
     <script>
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document,
                 s = d.createElement('script');
-            s.src = 'https://https-ninoplay-site-ai-html-ko-aihistory.disqus.com/embed.js';
+            s.src = 'https://https-ninoplay-site.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
@@ -141,7 +120,6 @@
     <noscript>Please enable JavaScript to view the
         <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     </noscript>
-    <script id="dsq-count-scr" src="//https-ninoplay-site-ai-html-ko-aihistory.disqus.com/count.js" async></script>
 </body>
 
 <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
@@ -152,6 +130,22 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
 
+<!-- Copyright (c) 2020 by Mert Cukuren (https://codepen.io/knyttneve/pen/bPpEZY)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+
+<!-- Copyright (c) 2020 by Rplus (https://codepen.io/Rplus/pen/PWZYRM)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
 <!-- Copyright (c) 2020 by Mana (https://codepen.io/manabox/pen/GgQVdJ)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -160,21 +154,5 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  -->
-
-<!-- Copyright (c) 2020 by Francois van Leersum (https://codepen.io/Blockshot/pen/RoPorx)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
-
-<!-- Copyright (c) 2020 by Vladislav Trefil (https://codepen.io/v_trefil/pen/oxmdqw)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
 
 </html>

@@ -2,6 +2,24 @@
 <html lang="ko">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5NF2WXP');
+    </script>
+    <!-- End Google Tag Manager -->
     <!-- Required meta tags -->
     <meta name="keywords" content="역사인물, 독립운동가, history, korean, An independent activist, independent, activist">
     <meta name="description" content="역사인물 얼굴 매칭">
@@ -32,7 +50,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script data-ad-client="ca-pub-9950420986230228" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
+
 </head>
 
 <body onload="onload()">
@@ -54,24 +72,25 @@
         <div class="file-upload-content">
             <img class="file-upload-image" id="face-image" src="#" alt="your image" />
             <div class="loading">
-              <div class="counter">
-                <p>MATCHING...</p>
-                <h1>0%
-                  <!--
+                <div class="counter">
+                    <p>MATCHING...</p>
+                    <h1>0%
+                        <!--
                   h1.abs loading
                   h1.abs.color loading
                   -->
-                </h1>
-              </div>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script  src="../../js/ko/loading.js"></script>
+                    </h1>
+                </div>
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+                <script src="../../js/ko/loading.js"></script>
             </div>
-            
+
             <p class="result-message"></p>
 
             <div class="widget">
                 <!-- <div class="header">닮음 비율</div> -->
                 <div id="chart" class="chart-container"></div>
-            </div> 
+            </div>
             <div class="javascriptDiv"></div>
 
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -92,7 +111,7 @@
             <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
         </div>
         <div>참고 사이트(내용참고)
-            <a href="https://encykorea.aks.ac.kr/" title="Freepik">한국민족문화대백과사전</a> 
+            <a href="https://encykorea.aks.ac.kr/" title="Freepik">한국민족문화대백과사전</a>
         </div>
     </div>
     <script>
@@ -141,6 +160,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
-
 
 </html>

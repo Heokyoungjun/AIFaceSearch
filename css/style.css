@@ -23,4 +23,23 @@ body {
     color: #35465d;
 }
 
+.by {
+  width: 276px;
+  height: 32px;
+  font-family: NanumSquareR;
+  font-size: 29.5px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+  color: #f73737;
+}
 
+.youtube-copy {
+  width: 60px;
+  height: 51px;
+  object-fit: contain;
+  box-shadow: 10.1px 16.1px 20px 0 rgba(194, 194, 194, 0.9);
+}

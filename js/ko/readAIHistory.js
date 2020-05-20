@@ -25,6 +25,7 @@ function readURL(input) {
             $('.image-title').html(input.files[0].name);
         };
         reader.readAsDataURL(input.files[0]);
+        loading();
         init().then(() => {
             predict();
             $('.loading').hide();

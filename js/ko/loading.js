@@ -1,5 +1,4 @@
-$(document).ready(function() {
-  
+function loading() {
   var counter = 0;
   var c = 0;
   var i = setInterval(function(){
@@ -10,5 +9,5 @@ $(document).ready(function() {
     if(counter == 101) {
         clearInterval(i);
     }
-  }, 80);
-});
+  }, 50);
+}

@@ -20,8 +20,19 @@
     padding : 5% 3%; 
     margin: 0 auto;
     border-radius: 10px;
-    border: solid 1.5px #6ecccc;;
-    background-color: #6ecccc;;
+    border: solid 1.5px #f05f70;;
+    background-color: #000000;
+    max-width: 700px;
+    max-height: 1500px;
+   
+}
+
+.file-upload3 {
+    padding : 5% 3%; 
+    margin: 0 auto;
+    border-radius: 10px;
+    border: solid 15px #ce541f;
+    background-color: #0d0e0700;
     max-width: 700px;
     max-height: 1500px;
    

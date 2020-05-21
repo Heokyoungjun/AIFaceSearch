@@ -16,6 +16,22 @@
    box-shadow: 0 0 0 7px #FEA993;
 }
 
+.dt-1 {
+   font-size: 1.3rem;
+   width: 90%;
+   margin: 0 auto;
+   color: #fff;
+   padding: 10px;
+   background: #FEA993;
+   border: 2px dashed #F7F9CC;
+   border-radius: 20px;
+   box-shadow: 0 0 0 7px #FEA993;
+}
+
+.ln-1 {
+   padding-top: 25px;
+}
+
 .animal-title {
     font-size: 2.5rem;
     padding-bottom: 20px;

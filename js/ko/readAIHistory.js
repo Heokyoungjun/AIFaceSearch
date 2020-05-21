@@ -62,9 +62,7 @@ async function predict() {
     var image1 = document.getElementById("face-image");
     const prediction = await model.predict(image1, false);
     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-    var rsMsg;
     var resultTitle, resultDetails, resultLink;
-
     var historyKind = prediction[0].className;
     
     resultTitle = rstTitlelMap.get(historyKind);

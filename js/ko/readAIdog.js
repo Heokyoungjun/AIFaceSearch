@@ -1,8 +1,11 @@
 let URL = "https://teachablemachine.withgoogle.com/models/iHsKmtuYD/";
 let model, labelContainer, maxPredictions;
-var rstTitlelMap = newMap();
+var nameKo = newMap();
+var nameEn = newMap();
 var details = newMap();
-var link = newMap();
+var life = newMap();
+var origin = newMap();
+
 var dataset = [
     { name: '', percent: 0 },
     { name: '', percent: 0 },
@@ -10,7 +13,6 @@ var dataset = [
     { name: '', percent: 0 },
     { name: '', percent: 0 }
 ];
-var nextsite = "";
 
 // AI링크 읽기
 function readURL(input) {
@@ -24,12 +26,10 @@ function readURL(input) {
             $('.image-title').html(input.files[0].name);
         };
         reader.readAsDataURL(input.files[0]);
-        loading()
         init().then(() => {
             predict();
             $('.widget').show();
         });
-
     } else {
         removeUpload();
     }
@@ -60,30 +60,36 @@ async function predict() {
     var image1 = document.getElementById("face-image");
     const prediction = await model.predict(image1, false);
     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-    var rsMsg;
-    var resultTitle, resultDetails, resultLink;
+    var aniKey = "";
+    var rsNameKo = "";
+    var rsNameEn = "";
+    var rsDetail = "";
+    var rsLife = "";
+    var rsOrgin = "";
 
     var historyKind = prediction[0].className;
     
-    resultTitle = rstTitlelMap.get(historyKind);
-    resultDetails = details.get(historyKind);
-    resultLink = link.get(historyKind);
+    rsNameKo = nameKo.get(historyKind);
+    rsNameEn = nameEn.get(historyKind);
+    rsDetail = details.get(historyKind);
+    rsLife = life.get(historyKind);
+    rsOrgin = origin.get(historyKind);
     
-    var title = "<div class='animal-title' style='color:white'>" + resultTitle + "</div>";
-    var explain = "<div class='animal-explain pt-2'>" + resultDetails + "</div>";
-
-    nextsite = resultLink;
+    var title = "<div class='animal-title' style='color:white'>" + rsNameKo + "(" + rsNameEn + ")" + "</div>";
+    var explain = "<div class='dt-1 pt-2'>" + rsDetail + "</div>";
+    var life_detail = "<div class='ln-1'></div><div class='dt-1'> 평균 수명 : " + rsLife + "</div>";
+    var origin_detail = "<div class='ln-1'></div><div class='dt-1'> 출생지 : " + rsOrgin + "</div>";
     
-    $('.result-message').html(title + explain);
+    $('.result-message').html(title + explain + life_detail + origin_detail);
     
-    for (let i = 0; i < 5; i++) {
-        dataset[i].name = rstTitlelMap.get(prediction[i].className);
-        var tm = prediction[i].probability * 100;
-        dataset[i].percent = tm.toFixed(2);
-    }
+    // for (let i = 0; i < 5; i++) {
+    //     dataset[i].name = rstTitlelMap.get(prediction[i].className);
+    //     var tm = prediction[i].probability * 100;
+    //     dataset[i].percent = tm.toFixed(2);
+    // }
     
-    var javascriptDiv= "<script type='text/javascript' src='../../js/ko/circleChart.js'></script>"
-    $('.javascriptDiv').html(javascriptDiv);
+    // 로딩화면 없애기
+    loading()
 }
 
 // 초기화면 로딩시 호출
@@ -105,21 +111,28 @@ function myFunction(xml) {
     var parser = new DOMParser();
     var xmlDoc = xml.responseText;
     var xmlText = parser.parseFromString(xmlDoc,"text/xml");
-    var history = xmlText.getElementsByTagName('dogKind');
+    var dogKind = xmlText.getElementsByTagName('dogKind');
     var aniKey = "";
-    var rsTitelVal = "";
-    var detailsVal = "";
-    var linkVal = "";
+    var rsNameKo = "";
+    var rsNameEn = "";
+    var rsDetail = "";
+    var rsLife = "";
+    var rsOrgin = "";
+
     
-    for (i = 0; i < history[0].childElementCount ;i++) {
-        aniKey = history[0].children[i].nodeName;
-        rsTitelVal = history[0].children[i].children[0].firstChild.nodeValue;
-        detailsVal = history[0].children[i].children[1].firstChild.nodeValue;
-        linkVal = history[0].children[i].children[2].firstChild.nodeValue;
+    for (i = 0; i < dogKind[0].childElementCount ;i++) {
+        aniKey = dogKind[0].children[i].nodeName;
+        rsNameKo = dogKind[0].children[i].children[0].firstChild.nodeValue;
+        rsNameEn = dogKind[0].children[i].children[1].firstChild.nodeValue;
+        rsDetail = dogKind[0].children[i].children[2].firstChild.nodeValue;
+        rsLife = dogKind[0].children[i].children[3].firstChild.nodeValue;
+        rsOrgin = dogKind[0].children[i].children[4].firstChild.nodeValue;
         
-        rstTitlelMap.put(aniKey, rsTitelVal); 
-        details.put(aniKey, detailsVal);
-        link.put(aniKey, linkVal);
+        nameKo.put(aniKey, rsNameKo); 
+        nameEn.put(aniKey, rsNameEn); 
+        details.put(aniKey, rsDetail);
+        life.put(aniKey, rsLife);
+        origin.put(aniKey, rsOrgin);
     }
 }
 

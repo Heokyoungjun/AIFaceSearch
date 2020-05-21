@@ -73,7 +73,6 @@ async function predict() {
     
     var title = "<div class='animal-title' style='color:white'>" + resultTitle + "</div>";
     var explain = "<div class='animal-explain pt-2'>" + resultDetails + "</div>";
-    // var relink = "<div style='padding-top: 20px;'><a href='" + resultLink + "' target='_blank' style='color:white;'>참고 문헌 링크</a></div>";
     nextsite = resultLink;
     
     $('.result-message').html(title + explain);

@@ -18,16 +18,15 @@ function readURL(input) {
         var reader = new FileReader();
         reader.onload = function(e) {
             $('.image-upload-wrap').hide();
-            $('#loading').show();
             $('.widget').hide();
             $('.file-upload-image').attr('src', e.target.result);
             $('.file-upload-content').show();
             $('.image-title').html(input.files[0].name);
         };
         reader.readAsDataURL(input.files[0]);
+        loading()
         init().then(() => {
             predict();
-            $('#loading').hide();
             $('.widget').show();
         });
 
@@ -72,7 +71,7 @@ async function predict() {
     
     var title = "<div class='animal-title' style='color:white'>" + resultTitle + "</div>";
     var explain = "<div class='animal-explain pt-2'>" + resultDetails + "</div>";
-    // var relink = "<div style='padding-top: 20px;'><a href='" + resultLink + "' target='_blank' style='color:white;'>참고 문헌 링크</a></div>";
+
     nextsite = resultLink;
     
     $('.result-message').html(title + explain);

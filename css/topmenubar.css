@@ -33,7 +33,6 @@ a{
 }
 
 #principale a:hover, .activate{
-	/* background:#eee !important; */
 	color:#ccc;
 }
 
@@ -44,5 +43,5 @@ a{
 	width:100%;
 	z-index:99;
 	border-bottom:4px solid #ff7900;
-	display:none;
+
 }

@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>지하철 정보</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/svg-pan-zoom.min.js"></script>
+    <script type="text/javascript" src="./css/main.css"></script>
+    <script>
+        var obj;
+        $(document).ready(function() {
+            $('#seoulSubwayMap')[0].addEventListener('load', function() {
+                obj = svgPanZoom('#seoulSubwayMap');
+                // obj.zoomAtPointBy(0, {
+                //     x: $('#mainViewContainer').width() / 2,
+                //     y: 0
+                // });
+                var svgDoc = $('#seoulSubwayMap')[0].getSVGDocument();
+                svgDoc.onmousemove = function(evt) {
+                    var clickedElement = evt.target;
+                    $(svgDoc).find('text').attr('font-size', '20px');
+                    $(svgDoc).find('tspan').attr('font-size', '20px');
+                    if ($(clickedElement).is("text") || $(clickedElement).is("tspan")) {
+                        if ($(clickedElement).parent().attr('id') != 'legend_x5F_ko') {
+                            $(clickedElement).css('cursor', 'pointer');
+                            $(clickedElement).attr('font-size', '30px');
+                            if ($(clickedElement).is("tspan")) {
+                                $(clickedElement).siblings().css('cursor', 'pointer');
+                                $(clickedElement).siblings().attr('font-size', '30px');
+                            }
+                        }
+                    }
+                }
+                svgDoc.onclick = function(evt) {
+                    var clickedElement = evt.target;
+                    if ($(clickedElement).is("text") || $(clickedElement).is("tspan")) {
+                        console.log($(clickedElement).text());
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <div id="mainViewContainer" width="50%"> -->
+        <embed id="seoulSubwayMap" type="image/svg+xml" src="Seoul_subway_linemap_ko.svg" width="100%" />
+    <!-- </div> -->
+
+</body>
+
+</html>

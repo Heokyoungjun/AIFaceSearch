@@ -1,0 +1,139 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* #mainViewContainer {
+    width: 100%;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 3px;
+    overflow: hidden;
+} */
+
+#seoulSubwayMap {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: inline;
+}
+
+.title {
+    line-height: 1.67;
+    text-align: center;
+    color: #35465d;
+}
+
+.subtitle {
+    line-height: 1.53;
+    text-align: center;
+    color: #35465d;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+    .navbar-brand {
+        font-size: 2rem;
+    }
+}
+
+.upload-text {
+    width: 50%;
+    font-size: 1.5rem;
+    line-height: 1.57;
+    text-align: center;
+    color: #35465d;
+    margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input#gender {
+  display: none;
+}
+
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    width: 90px;
+    height: 41px;
+    box-shadow: 0 0 0 8px #e5e9ea inset;
+    border-radius: 30px;
+    position: relative;
+}
+
+.knob {
+    position: absolute;
+    width: 41px;
+    top: 0;
+    left: 0;
+    height: 41px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #f470a7 inset;
+    background-color: #fbd4e6;
+    transition: 0.3s;
+}
+
+.knob > i {
+    position: absolute;
+    width: 4px;
+    height: 18px;
+    top: 100%;
+    background-color: #f470a7;
+    left: calc(50% - 2px);
+}
+
+.knob > i:before, .knob > i:after {
+    width: 6px;
+    position: absolute;
+    top: 42%;
+    content: "";
+    height: 4px;
+    background-color: #f470a7;
+}
+
+.knob > i:before {
+    left: 4px;
+}
+
+.knob > i:after {
+  left: -6px;
+}
+
+input:checked + label > .knob {
+  box-shadow: 0 0 0 8px #a1c6dd inset;
+  background-color: #e2ecf4;
+  transform: translateX(49px) rotate(-140deg);
+}
+
+input:checked + label > .knob > i {
+  background-color: #a1c6dd;
+}
+
+input:checked + label > .knob > i:after,
+input:checked + label > .knob > i:before {
+  background-color: #a1c6dd;
+}
+
+input:checked + label > .knob > i:after {
+    top: 14.5px;
+    width: 12px;
+    left: -7px;
+    transform: rotate(45deg);
+}
+
+input:checked + label > .knob > i:before {
+    top: 13px;
+    width: 12px;
+    left: 0px;
+    transform: rotate(134deg);
+}

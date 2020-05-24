@@ -18,7 +18,7 @@ body {
 .frame {
   margin: auto;
   padding: 5px 0px;
-  width: 56px;
+  width: 100%;
   border: 2px solid #303a21;
 }
 

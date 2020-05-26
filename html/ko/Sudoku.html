@@ -9,6 +9,7 @@
     <meta name="description" content="ninoplay let's play sudoku" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../css/sudoku.css">
+    <link rel="stylesheet" href="../../css/slide-menu.css" />
     <script data-ad-client="ca-pub-9950420986230228" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166010656-1"></script>
@@ -23,36 +24,48 @@
     </script>
 </head>
 
-<body>
-    <iframe src="../common/ko/topmenubar.html" style="border:none;width:100%;height:100%;"></iframe>
-    <div>
-        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-urmc43ucagja" data-ad-width="320" data-ad-height="100"></ins>
+<body onload="sideMenu_init()">
+    <nav id="slide-menu">
+        <ul>
+        </ul>
+        <div style="padding-left:20px;">
+            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1jed5niie08xl" data-ad-width="250" data-ad-height="250"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+    </nav>
+
+    <div id="content" style="background-color:#81c39f">
+        <div class="menu-trigger"></div>
+        <div style="padding-top:50px;">
+            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-urmc43ucagja" data-ad-width="320" data-ad-height="100"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </div>
+        <!-- partial:index.partial.html -->
+        <a href="#" id="sidebar-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+
+        <h1 id="sudoku_title">SUDOKU</h1>
+
+        <div id="sudoku_menu">
+            <ul>
+                <li>
+                    <a class="restart" href="#">New Game</a>
+                </li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div id="sudoku_container"></div>
+        <!-- partial -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="../../js/ko/sudoku.js"></script>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-s1dxa6guy14l" data-ad-width="320" data-ad-height="100"></ins>
         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     </div>
-    <!-- partial:index.partial.html -->
-    <a href="#" id="sidebar-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </a>
-
-    <h1 id="sudoku_title">SUDOKU</h1>
-
-    <div id="sudoku_menu">
-        <ul>
-            <li>
-                <a class="restart" href="#">New Game</a>
-            </li>
-            <li></li>
-        </ul>
-    </div>
-
-    <div id="sudoku_container"></div>
-    <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="../../js/ko/sudoku.js"></script>
-    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-s1dxa6guy14l" data-ad-width="320" data-ad-height="100"></ins>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    <script src="../../js/ko/slideMenu.js"></script>
 </body>
 <!-- Copyright (c) 2020 by CRISTIAN CANEA (https://codepen.io/cristiancanea/pen/GhLpI)
 

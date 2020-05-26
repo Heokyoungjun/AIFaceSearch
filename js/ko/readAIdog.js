@@ -102,6 +102,9 @@ function onload() {
     };
     req.open("GET", "../../xml/ko/DogKind.xml", true);
     req.send();
+    
+    // 슬라이드 메뉴
+    sideMenu_init();
 }
 
 // xml파일 읽기 및 맵에 저장

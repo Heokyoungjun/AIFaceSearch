@@ -13,7 +13,7 @@
     <link rel="icon" href="../../img/puzzle.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="../../css/mainbg.css" />
-
+    <link rel="stylesheet" href="../../css/slide-menu.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/ko/mainbg.js"></script>
@@ -37,18 +37,24 @@
     </script>
 </head>
 
-<body>
+<body onload="sideMenu_init()">
+    <nav id="slide-menu">
+        <ul>
+        </ul>
+    </nav>
 
-    <iframe src="../common/ko/topmenubar.html" style="border:none;width:100%;height:100%;"></iframe>
-
-    <div id="world" />
-    <div id="credits">
-        <p>
-            <a href="http://babeltheking.com" target="blank">Babel the king</a> |
-            <a href="https://codepen.io/Yakudoo/" target="blank">my other codepens</a> |
-            <a href="https://www.epic.net" target="blank">epic.net</a>
-        </p>
+    <div id="content">
+        <div class="menu-trigger"></div>
+        <div id="world" />
+        <div id="credits">
+            <p>
+                <a href="http://babeltheking.com" target="blank">Babel the king</a> |
+                <a href="https://codepen.io/Yakudoo/" target="blank">my other codepens</a> |
+                <a href="https://www.epic.net" target="blank">epic.net</a>
+            </p>
+        </div>
     </div>
+    <script src="../../js/ko/slideMenu.js"></script>
 </body>
 
 <!-- Copyright (c) 2020 by Karim Maaloul (https://codepen.io/Yakudoo/pen/oXJYxy)

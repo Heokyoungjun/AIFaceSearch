@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../../css/AIanimalmatching.css">
     <link rel="stylesheet" href="../../css/loading.css">
     <link rel="stylesheet" href="../../css/stateBar.css">
+    <link rel="stylesheet" href="../../css/slide-menu.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ea992a7f386c660"></script>
@@ -45,81 +46,92 @@
 </head>
 
 <body onload="onload()">
-    <iframe src="../common/ko/topmenubar.html" style="border:none;width:100%;height:100%;"></iframe>
-    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1iesaaci8it6g" data-ad-width="320" data-ad-height="100"></ins>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    <section class="section">
-        <div class="title-img">
-            <img src="../../img/doubutu_kr.png" style="width:100%;height:100%;">
+    <!-- <iframe src="../common/ko/topmenubar.html" style="border:none;width:100%;height:100%;"></iframe> -->
+    <nav id="slide-menu">
+        <ul>
+        </ul>
+        <div style="padding-left:20px;">
+            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1jed5niie08xl" data-ad-width="250" data-ad-height="250"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
-    </section>
-    <section class="d-flex justify-content-center" style="padding: 20px;">
-        <img src="../../img/doubutu_woman.png" style="width:70px;height:70px;padding-right:20px;padding-bottom:10px;">
-        <input type="checkbox" id="gender">
-        <label for="gender">
-            <span class="knob">
-                <i></i>
-            </span>
-        </label>
-        <img src="../../img/doubutu_man.png" style="width:70px;height:70px;padding-left:15px;padding-bottom:10px;">
-    </section>
+    </nav>
+    <div id="content">
+        <div class="menu-trigger"></div>
+        <section class="section">
+            <div class="title-img">
+                <img src="../../img/doubutu_kr.png" style="width:100%;height:100%;">
+            </div>
+        </section>
+        <section class="d-flex justify-content-center" style="padding: 20px;">
+            <img src="../../img/doubutu_woman.png" style="width:70px;height:70px;padding-right:20px;padding-bottom:10px;">
+            <input type="checkbox" id="gender">
+            <label for="gender">
+                <span class="knob">
+                    <i></i>
+                </span>
+            </label>
+            <img src="../../img/doubutu_man.png" style="width:70px;height:70px;padding-left:15px;padding-bottom:10px;">
+        </section>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1iesaaci8it6g" data-ad-width="320" data-ad-height="100"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        <div class="container file-upload mb-5">
+            <div class="image-upload-wrap" style="width:70%; margin:0 auto;">
+                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="drag-text">
+                    <img src="../../img/upload-icon.png" alt="" class="mt-5 upload" style="width:20%">
+                    <h3 class="upload-text">Photo File Update</h3>
+                </div>
+            </div>
+            <div class="file-upload-content">
+                <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+                <div id="loading" class="cat">
+                    <div class="cat__body"></div>
+                    <div class="cat__body"></div>
+                    <div class="cat__tail"></div>
+                    <div class="cat__head"></div>
+                </div>
+                <p class="result-message"></p>
+                <div id="label-container" class="d-flex flex-column justify-content-around"></div>
 
-    <div class="container file-upload mb-5">
-        <div class="image-upload-wrap" style="width:70%; margin:0 auto;">
-            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-            <div class="drag-text">
-                <img src="../../img/upload-icon.png" alt="" class="mt-5 upload" style="width:20%">
-                <h3 class="upload-text">Photo File Update</h3>
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox"></div>
+
+                <div class="pt-5 image-title-wrap">
+                    <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
+                        <span class="try-again-text">RETRY</span>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="file-upload-content">
-            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-            <div id="loading" class="cat">
-                <div class="cat__body"></div>
-                <div class="cat__body"></div>
-                <div class="cat__tail"></div>
-                <div class="cat__head"></div>
-            </div>
-            <p class="result-message"></p>
-            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
-
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <div class="addthis_inline_share_toolbox"></div>
-
-            <div class="pt-5 image-title-wrap">
-                <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
-                    <span class="try-again-text">RETRY</span>
-                </button>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-s1dxa6guy14l" data-ad-width="320" data-ad-height="100"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        <div id="webcam-container"></div>
+        <div id="disqus_thread" class="dis-th" style="max-width:700px;"></div>
+        <div class="iconpr">
+            <div>아이콘 제작자
+                <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from
+                <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
             </div>
         </div>
-    </div>
-    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-s1dxa6guy14l" data-ad-width="320" data-ad-height="100"></ins>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    <div id="webcam-container"></div>
-    <div id="disqus_thread" class="dis-th" style="max-width:700px;"></div>
-    <div class="iconpr">
-        <div>아이콘 제작자
-            <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from
-            <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
+        <div style="text-align: right;">
+            <a class="by" href="https://www.youtube.com/playlist?list=PLU9-uwewPMe2-vtJAgWB6SNhHcTjJDgEO">제작 도움:By 조코딩 유튜브 채널</a>
+            <img src="../../img/youtube-copy.png" class="youtube-copy">
         </div>
-    </div>
-    <div style="text-align: right;">
-        <a class="by" href="https://www.youtube.com/playlist?list=PLU9-uwewPMe2-vtJAgWB6SNhHcTjJDgEO">제작 도움:By 조코딩 유튜브 채널</a>
-        <img src="../../img/youtube-copy.png" class="youtube-copy">
-    </div>
 
-    <script>
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document,
-                s = d.createElement('script');
-            s.src = 'https://https-ninoplay-site.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the
-        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript>
+        <script>
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://https-ninoplay-site.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+    <script src="../../js/ko/slideMenu.js"></script>
 </body>
 
 <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)

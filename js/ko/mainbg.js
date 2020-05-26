@@ -83,13 +83,13 @@ function handleWindowResize() {
 }
 
 function handleMouseMove(event) {
-  mousePos = { x: event.clientX, y: event.clientY-120 };
+  mousePos = { x: event.clientX, y: event.clientY };
 }
 
 function handleTouchMove(event) {
   if (event.touches.length == 1) {
     event.preventDefault();
-    mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY-120 };
+    mousePos = { x: event.touches[0].pageX, y: event.touches[0].pageY };
   }
 }
 

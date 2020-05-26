@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../../css/stateBar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
     <link rel="stylesheet" href="../../css/circleChart.css">
+    <link rel="stylesheet" href="../../css/slide-menu.css" />
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ea992a7f386c660"></script>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -47,103 +48,113 @@
 
 </head>
 
-<body onload="onload()" style="background-color:#6aacc5;">
-    <iframe src="../common/ko/topmenubar.html" style="border:none;width:100%;height:100%;"></iframe>
-    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1iesaaci8it6g" data-ad-width="320" data-ad-height="100"></ins>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    <section class="section">
-        <div class="title-img">
-            <img src="../../img/history_kr.png" style="width:100%;height:100%;">
+<body onload="onload()">
+    <nav id="slide-menu">
+        <ul>
+        </ul>
+        <div style="padding-left:20px;">
+            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1jed5niie08xl" data-ad-width="250" data-ad-height="250"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
         </div>
-    </section>
+    </nav>
 
-    <div class="container file-upload2 mb-5">
-        <div class="image-upload-wrap" style="width:70%; margin:0 auto;">
-            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-            <div class="drag-text">
-                <img src="../../img/upload-icon.png" alt="" class="mt-5 upload" style="width:20%">
-                <h3 class="upload-text">Photo File Update</h3>
+    <div id="content" style="background-color:#6aacc5;">
+        <div class="menu-trigger"></div>
+        <section class="section">
+            <div class="title-img">
+                <img src="../../img/history_kr.png" style="width:100%;height:100%;">
             </div>
-        </div>
-        <div class="file-upload-content">
-            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-            <div class="loading">
-                <div class="counter">
-                    <p>MATCHING...</p>
-                    <h1>0%
-                        <!--
-                  h1.abs loading
-                  h1.abs.color loading
-                  -->
-                    </h1>
+        </section>
+
+        <div class="container file-upload2 mb-5">
+            <div class="image-upload-wrap" style="width:70%; margin:0 auto;">
+                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="drag-text">
+                    <img src="../../img/upload-icon.png" alt="" class="mt-5 upload" style="width:20%">
+                    <h3 class="upload-text">Photo File Update</h3>
                 </div>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-                <script src="../../js/ko/loading.js"></script>
             </div>
+            <div class="file-upload-content">
+                <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+                <div class="loading">
+                    <div class="counter">
+                        <p>MATCHING...</p>
+                        <h1>0%
+                            <!--
+                      h1.abs loading
+                      h1.abs.color loading
+                      -->
+                        </h1>
+                    </div>
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+                    <script src="../../js/ko/loading.js"></script>
+                </div>
 
-            <p class="result-message"></p>
+                <p class="result-message"></p>
 
-            <div class="widget">
-                <!-- <div class="header">닮음 비율</div> -->
-                <div id="chart" class="chart-container"></div>
-            </div>
-            <div class="javascriptDiv"></div>
+                <div class="widget">
+                    <!-- <div class="header">닮음 비율</div> -->
+                    <div id="chart" class="chart-container"></div>
+                </div>
+                <div class="javascriptDiv"></div>
 
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <div class="addthis_inline_share_toolbox"></div>
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox"></div>
 
-            <div class="pt-5 image-title-wrap">
-                <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
-                    <span class="try-again-text">RETRY</span>
-                </button>
-            </div>
-            <div class="link">
-                <button type="button p-2" onclick="linksite()" class="try-again-btn2">
-                    <span class="try-again-text">참고문헌</span>
-                </button>
+                <div class="pt-5 image-title-wrap">
+                    <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
+                        <span class="try-again-text">RETRY</span>
+                    </button>
+                </div>
+                <div class="link">
+                    <button type="button p-2" onclick="linksite()" class="try-again-btn2">
+                        <span class="try-again-text">참고문헌</span>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-   <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-s1dxa6guy14l" data-ad-width="320" data-ad-height="100"></ins>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    <div id="webcam-container"></div>
+       <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-s1dxa6guy14l" data-ad-width="320" data-ad-height="100"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        <div id="webcam-container"></div>
 
-    <div id="disqus_thread" class="dis-th" style="max-width:700px;"></div>
-    <div class="iconpr">
-        <div>아이콘 제작자
-            <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from
-            <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
+        <div id="disqus_thread" class="dis-th" style="max-width:700px;"></div>
+        <div class="iconpr">
+            <div>아이콘 제작자
+                <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from
+                <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a>
+            </div>
+            <div>참고 사이트(내용참고)
+                <a href="https://encykorea.aks.ac.kr/" title="Freepik">한국민족문화대백과사전</a>
+            </div>
         </div>
-        <div>참고 사이트(내용참고)
-            <a href="https://encykorea.aks.ac.kr/" title="Freepik">한국민족문화대백과사전</a>
+        <div style="text-align: right;">
+            <a class="by" href="https://www.youtube.com/playlist?list=PLU9-uwewPMe2-vtJAgWB6SNhHcTjJDgEO">제작 도움:By 조코딩 유튜브 채널</a>
+            <img src="../../img/youtube-copy.png" class="youtube-copy">
         </div>
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://https-ninoplay-site-ai-html-ko-aihistory.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+        <script id="dsq-count-scr" src="//https-ninoplay-site-ai-html-ko-aihistory.disqus.com/count.js" async></script>
     </div>
-    <div style="text-align: right;">
-        <a class="by" href="https://www.youtube.com/playlist?list=PLU9-uwewPMe2-vtJAgWB6SNhHcTjJDgEO">제작 도움:By 조코딩 유튜브 채널</a>
-        <img src="../../img/youtube-copy.png" class="youtube-copy">
-    </div>
-    <script>
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document,
-                s = d.createElement('script');
-            s.src = 'https://https-ninoplay-site-ai-html-ko-aihistory.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the
-        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript>
-    <script id="dsq-count-scr" src="//https-ninoplay-site-ai-html-ko-aihistory.disqus.com/count.js" async></script>
+    <script src="../../js/ko/slideMenu.js"></script>
 </body>
 
 <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)

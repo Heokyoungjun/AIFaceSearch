@@ -101,7 +101,7 @@ var restOfTheData=function(){
         .text(function(d){
             return d;
         }).style({
-            fill:'#237',
+            fill:'#fff',
             'font-size':'14px'
         });
 };

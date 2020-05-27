@@ -3,21 +3,6 @@
   margin: 0 auto;
 }
 
-/* h1, p, h2, h3, h4, ul, li, div {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: -webkit-box;
-  display: flex;
-  font-family: Roboto;
-} */
-
 .loading {
   position: relative;
   object-fit: contain;

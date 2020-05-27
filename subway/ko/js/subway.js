@@ -78,6 +78,12 @@ function listClick (marker,position, idx){
 }
 
 // 클릭한 리스트 장소로 이동
+function sublistClick (marker,position, idx){
+
+    alert(idx)
+}
+
+// 클릭한 리스트 장소로 이동
 function nursingRoom (marker,position, idx){
 
     alert("수유실");
@@ -193,6 +199,7 @@ function placesSearchCB(data, status, pagination) {
         // 페이지 번호를 표출합니다
         // displayPagination(pagination);
 
+        search_category_init();
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
 
         alert('검색 결과가 존재하지 않습니다.');
@@ -254,6 +261,9 @@ function displayPlaces(places) {
                 itemEl.onclick =  function () {
                     listClick(marker, position, idx);
                 };
+                subitemEl.onclick = function () {
+                    sublistClick(marker, position, idx);
+                };
             })(marker, places[i].place_name, placePosition, i);
 
             fragment.appendChild(itemEl);
@@ -295,7 +305,7 @@ function getListItem(index, places) {
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem2(index) {
 
-    var el = document.createElement('div');
+    var el = document.createElement('ur');
     var itemStr = "";
         
     itemStr += '<div class="listBox lb1" id="listBox1_' + index + '"></div>' +

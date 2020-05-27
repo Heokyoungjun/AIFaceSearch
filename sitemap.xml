@@ -11,6 +11,8 @@
 <url><loc>https://ninoplay.site/html/ko/rabbit</loc><changefreq>always</changefreq><priority>0.85</priority></url>
 <url><loc>https://ninoplay.site/html/ko/cube</loc><changefreq>always</changefreq><priority>0.85</priority></url>
 <url><loc>https://ninoplay.site/html/ko/tetris</loc><changefreq>always</changefreq><priority>0.85</priority></url>
+<url><loc>https://ninoplay.site/subway/ko/subway</loc><changefreq>always</changefreq><priority>0.85</priority></url>
+    
     
 <url><loc>https://ninoplay.site/</loc><changefreq>always</changefreq><priority>1.00</priority></url>
 <url><loc>https://ninoplay.site/html/ja/aianimalmatching</loc><changefreq>always</changefreq><priority>0.85</priority></url>

@@ -46,9 +46,20 @@ function sideMenu_init(){
 
         if ( typeof $menu_trigger !== 'undefined' ) {
             $menu_trigger.addEventListener('click', function() {
-                $body.className = ( $body.className == 'menu-active' )? '' : 'menu-active';
+                if ($body.className === 'menu-active') {
+                    $body.className = '';
+                } else if ($body.className === '') {
+                    $body.className = 'menu-active';
+                } else if ($body.className === 'loaded') {
+                    $body.className = 'menu-active loaded';
+                } else if ($body.className === 'menu-active loaded') {
+                    $body.className = 'loaded';
+                }
+                
+                // $body.className = ( $body.className == 'menu-active' )? '' : 'menu-active';
             });
         }
 
     }).call(this);
+    
 }

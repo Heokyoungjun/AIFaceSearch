@@ -195,7 +195,7 @@
 }
 
 /* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   html {
     font-size: 10px;
   }
@@ -203,7 +203,7 @@
         font-size: 2rem;
     }
 }
-
+ */
 .upload-text {
     width: 50%;
     font-size: 1.5rem;

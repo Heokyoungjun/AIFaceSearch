@@ -1,3 +1,3 @@
 function loading() {
-    $('body').addClass(' loaded');
+    $('body').addClass('loaded');
 }

@@ -32,6 +32,40 @@ function init(){
 
     // 사이드 메뉴 설정
     sideMenu_init();
+
+    
+    
+    // var xhr = new XMLHttpRequest();
+    // // URL
+    // var url = 'http://openapi.kric.go.kr/openapi/convenientInfo/stationDairyRoom'; 
+    // // Service Key
+    // var queryParams = '?' + encodeURIComponent('ServiceKey') + '='+'$2a$10$RE2I6N1sMcLjaPn3ozSzHOJ3UL0HyA71yj9f5R7btP1ji7pbbpJ9i'; 
+    // queryParams += '&' + 'format=json';
+    // queryParams += '&' + encodeURIComponent('railOprIsttCd') + '=' + encodeURIComponent('S1');
+    // queryParams += '&' + encodeURIComponent('lnCd') + '=' + encodeURIComponent('3');
+    // queryParams += '&' + encodeURIComponent('stinCd') + '=' + encodeURIComponent('322');
+    // // xhr.open('GET', url + queryParams);
+    // // xhr.onreadystatechange = function () {
+    // //     if (this.readyState == 4) {
+    // //         alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+    // //     }
+    // // };
+
+    // // xhr.send('');
+    
+    // $.ajax({
+    //     type:"GET",
+    //     url:url + queryParams,
+    //     success: function(data) {
+    //         alert(data);
+    //     }
+    })
+    
+    
+    
+    
+    
+    
     
     // // 지도를 클릭한 위치에 표출할 마커입니다
     // var marker = new kakao.maps.Marker({ 

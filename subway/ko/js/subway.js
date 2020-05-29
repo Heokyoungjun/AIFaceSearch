@@ -12,46 +12,46 @@ var infowindow;
 
 // 화면 로딩시 첫 화면 설정
 function init(){
-    // 지도를 표시할 div 
-    var container = document.getElementById('map');
-    var options = {
-        // 지도의 중심좌표
-        center: new kakao.maps.LatLng(37.570306, 126.976856),
-        // 지도의 확대 레벨
-        level: 3
+    // // 지도를 표시할 div 
+    // var container = document.getElementById('map');
+    // var options = {
+    //     // 지도의 중심좌표
+    //     center: new kakao.maps.LatLng(37.570306, 126.976856),
+    //     // 지도의 확대 레벨
+    //     level: 3
+    // };
+
+    // // 지도를 생성
+    // map = new kakao.maps.Map(container, options);
+
+    // // 장소 검색 객체를 생성합니다
+    // ps = new kakao.maps.services.Places();  
+
+    // // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
+    // infowindow = new kakao.maps.InfoWindow({zIndex:1});
+
+    // // 사이드 메뉴 설정
+    // sideMenu_init();
+
+    
+    
+    var xhr = new XMLHttpRequest();
+    // URL
+    var url = 'https://openapi.kric.go.kr/openapi/convenientInfo/stationDairyRoom'; 
+    // Service Key
+    var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'$2a$10$RE2I6N1sMcLjaPn3ozSzHOJ3UL0HyA71yj9f5R7btP1ji7pbbpJ9i'; 
+    queryParams += '&' + 'format=json';
+    queryParams += '&' + encodeURIComponent('railOprIsttCd') + '=' + encodeURIComponent('S1');
+    queryParams += '&' + encodeURIComponent('lnCd') + '=' + encodeURIComponent('3');
+    queryParams += '&' + encodeURIComponent('stinCd') + '=' + encodeURIComponent('322');
+    xhr.open('GET', url + queryParams);
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+        }
     };
 
-    // 지도를 생성
-    map = new kakao.maps.Map(container, options);
-
-    // 장소 검색 객체를 생성합니다
-    ps = new kakao.maps.services.Places();  
-
-    // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-    infowindow = new kakao.maps.InfoWindow({zIndex:1});
-
-    // 사이드 메뉴 설정
-    sideMenu_init();
-
-    
-    
-    // var xhr = new XMLHttpRequest();
-    // // URL
-    // var url = 'http://openapi.kric.go.kr/openapi/convenientInfo/stationDairyRoom'; 
-    // // Service Key
-    // var queryParams = '?' + encodeURIComponent('ServiceKey') + '='+'$2a$10$RE2I6N1sMcLjaPn3ozSzHOJ3UL0HyA71yj9f5R7btP1ji7pbbpJ9i'; 
-    // queryParams += '&' + 'format=json';
-    // queryParams += '&' + encodeURIComponent('railOprIsttCd') + '=' + encodeURIComponent('S1');
-    // queryParams += '&' + encodeURIComponent('lnCd') + '=' + encodeURIComponent('3');
-    // queryParams += '&' + encodeURIComponent('stinCd') + '=' + encodeURIComponent('322');
-    // // xhr.open('GET', url + queryParams);
-    // // xhr.onreadystatechange = function () {
-    // //     if (this.readyState == 4) {
-    // //         alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
-    // //     }
-    // // };
-
-    // // xhr.send('');
+    xhr.send('');
     
     // $.ajax({
     //     type:"GET",
@@ -59,7 +59,7 @@ function init(){
     //     success: function(data) {
     //         alert(data);
     //     }
-    })
+    // })
     
     
     

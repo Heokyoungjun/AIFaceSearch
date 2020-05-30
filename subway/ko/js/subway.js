@@ -8,6 +8,8 @@ var ps;
 var infowindow;
 // 커피숖
 
+var contentNode = document.createElement('div');
+var placeOverlay = new kakao.maps.CustomOverlay({zIndex:1});
 
 
 // 화면 로딩시 첫 화면 설정
@@ -32,12 +34,11 @@ function init(){
 
     // 사이드 메뉴 설정
     sideMenu_init();
-
     
-
-    
-    
-    
+    // 커스텀 오버레이의 컨텐츠 노드에 css class를 추가합니다 
+    contentNode.className = 'placeinfo_wrap';
+        // 커스텀 오버레이 컨텐츠를 설정합니다
+    placeOverlay.setContent(contentNode);  
     // // 지도를 클릭한 위치에 표출할 마커입니다
     // var marker = new kakao.maps.Marker({ 
     //     // 지도 중심좌표에 마커를 생성합니다 
@@ -80,18 +81,42 @@ function listClick (marker,position, idx){
     
     // $(".box-container").hide(500);
     $("#box-container"+idx).slideToggle(500);
+    // $("#box-container2"+idx).slideToggle(500);
+}
+
+// 수유실 정보
+function sublistClick1 (marker,position, idx, place){
+    var listValue = subway_list.get(place.place_name);
+    // var content = '<div class="placeinfo">' +
+    //             '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';
+    
+    nursingRoom(listValue[0],listValue[1],listValue[2],place);
+    // if (place.road_address_name) {
+    //     content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' +
+    //                 '  <span class="jibun" title="' + place.address_name + '">(지번 : ' + place.address_name + ')</span>';
+    // }  else {
+    //     content += '    <span title="' + place.address_name + '">' + place.address_name + '</span>';
+    // }                
+   
+    // content += '    <span class="tel">' + place.phone + '</span>' + 
+    //             '</div>' + 
+    //             '<div class="after"></div>';
+
+    // contentNode.innerHTML = content;
+    // placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
+    // placeOverlay.setMap(map);  
+
 }
 
 // 클릭한 리스트 장소로 이동
-function sublistClick (marker,position, idx){
+function sublistClick2 (marker,position, idx, place){
+alert("2");
 
-    alert(idx)
 }
 
 // 클릭한 리스트 장소로 이동
-function nursingRoom (marker,position, idx){
+function nursingRoom (railOprIsttCd,lnCd,stinCd,place){
 
-        
     var xhr = new XMLHttpRequest();
     // URL
     var url = 'https://openapi.kric.go.kr/openapi/convenientInfo/stationDairyRoom'; 
@@ -99,19 +124,37 @@ function nursingRoom (marker,position, idx){
     // var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'$2a$10$RE2I6N1sMcLjaPn3ozSzHOJ3UL0HyA71yj9f5R7btP1ji7pbbpJ9i'; 
     var queryParams = '?' + 'serviceKey' + '='+'$2a$10$RE2I6N1sMcLjaPn3ozSzHOJ3UL0HyA71yj9f5R7btP1ji7pbbpJ9i'; 
     queryParams += '&' + 'format=json';
-    queryParams += '&' + encodeURIComponent('railOprIsttCd') + '=' + encodeURIComponent('S1');
-    queryParams += '&' + encodeURIComponent('lnCd') + '=' + encodeURIComponent('3');
-    queryParams += '&' + encodeURIComponent('stinCd') + '=' + encodeURIComponent('322');
+    queryParams += '&' + encodeURIComponent('railOprIsttCd') + '=' + encodeURIComponent(railOprIsttCd);
+    queryParams += '&' + encodeURIComponent('lnCd') + '=' + encodeURIComponent(lnCd);
+    queryParams += '&' + encodeURIComponent('stinCd') + '=' + encodeURIComponent(stinCd);
     xhr.open('GET', url + queryParams);
     xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
-            alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+            
+            var resultJson = JSON.parse(this.responseText);
+            
+            var content = '<div class="placeinfo">' +
+                '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';
+            
+                // 수유실 정보 찾기
+            if ("03" === resultJson['header']['resultCode']) {
+                content += '    <span>수유실이 없습니다.</span>';
+                content += '</div>';
+                content += '<div class="after"></div>';
+
+            } else {
+                content += '    <span>수유실이 있습니다.</span>';
+                content += '  <span>(위치 : ' + resultJson['body'][0]['grndDvNm'] + ', ' + resultJson['body'][0]['dtlLoc']  + '근처)</span>';
+                content += '<div class="after"></div></div>';
+
+            }
+            contentNode.innerHTML = content;
+            placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
+            placeOverlay.setMap(map);
         }
     };
 
     xhr.send('');
-    alert("수유실");
-    
 }
 
 // 현재 위치 이동
@@ -214,7 +257,6 @@ function slideUp() {
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
 function placesSearchCB(data, status, pagination) {
     if (status === kakao.maps.services.Status.OK) {
-        document.getElementById("map").className = "map-after";
 
         // 정상적으로 검색이 완료됐으면
         // 검색 목록과 마커를 표출합니다
@@ -255,12 +297,13 @@ function displayPlaces(places) {
     var cnt = 0;
     for ( var i=0; i<places.length; i++ ) {
 
-        if (places[i].category_name.includes("기차역") || places[i].category_name.includes("지하철")) {
+        if (places[i].category_group_name.includes("지하철역")) {
             // 마커를 생성하고 지도에 표시합니다
             var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x);
             var marker = addMarker(placePosition, cnt);
             var itemEl = getListItem(cnt, places[i]); // 검색 결과 항목 Element를 생성합니다
-            var subitemEl = getListItem2(cnt); // 검색 결과 항목 Element를 생성합니다
+            var subitemEl1 = getListItem2(cnt); // 검색 결과 항목 Element를 생성합니다
+            // var subitemEl2 = getListItem3(cnt); // 검색 결과 항목 Element를 생성합니다
 
             // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
             // LatLngBounds 객체에 좌표를 추가합니다
@@ -269,40 +312,51 @@ function displayPlaces(places) {
             // 마커와 검색결과 항목에 mouseover 했을때
             // 해당 장소에 인포윈도우에 장소명을 표시합니다
             // mouseout 했을 때는 인포윈도우를 닫습니다
-            (function(marker, title, position, idx) {
-                kakao.maps.event.addListener(marker, 'mouseover', function() {
-                    displayInfowindow(marker, title);
-                });
+            (function(marker, title, position, idx, places) {
+                // kakao.maps.event.addListener(marker, 'mouseover', function() {
+                //     displayInfowindow(marker, title);
+                // });
 
-                kakao.maps.event.addListener(marker, 'mouseout', function() {
-                    infowindow.close();
-                });
-                itemEl.onmouseover =  function () {
-                    displayInfowindow(marker, title);
-                };
-                itemEl.onmouseout =  function () {
-                    infowindow.close();
-                };
+                // kakao.maps.event.addListener(marker, 'mouseout', function() {
+                //     infowindow.close();
+                // });
+                // itemEl.onmouseover =  function () {
+                //     displayInfowindow(marker, title);
+                // };
+                // itemEl.onmouseout =  function () {
+                //     infowindow.close();
+                // };
                 itemEl.onclick =  function () {
                     listClick(marker, position, idx);
                 };
-                subitemEl.onclick = function () {
-                    sublistClick(marker, position, idx);
+                subitemEl1.onclick = function () {
+                    sublistClick1(marker, position, idx, places);
                 };
-            })(marker, places[i].place_name, placePosition, cnt);
+                // subitemEl2.onclick = function () {
+                //     sublistClick2(marker, position, idx, places);
+                // };
+            })(marker, places[i].place_name, placePosition, cnt, places[i]);
 
             fragment.appendChild(itemEl);
-            fragment.appendChild(subitemEl);
+            fragment.appendChild(subitemEl1);
+            // fragment.appendChild(subitemEl2);
             cnt += 1;
         }
     }
 
-    // 검색결과 항목들을 검색결과 목록 Elemnet에 추가합니다
-    listEl.appendChild(fragment);
-    menuEl.scrollTop = 0;
+    if (cnt === 0) {
+        alert('검색 결과가 존재하지 않습니다. ');
+        document.getElementById("map").className = "map-before";
+        init();
+    } else {
+        document.getElementById("map").className = "map-after";
+        // 검색결과 항목들을 검색결과 목록 Elemnet에 추가합니다
+        listEl.appendChild(fragment);
+        menuEl.scrollTop = 0;
 
-    // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-    map.setBounds(bounds);
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+        map.setBounds(bounds);
+    }
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
@@ -331,23 +385,30 @@ function getListItem(index, places) {
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem2(index) {
 
-    var el = document.createElement('ur');
+    var el = document.createElement('div');
     var itemStr = "";
         
     itemStr += '<div class="listBox lb1" id="listBox1_' + index + '"></div>' +
-        '<div class="blackDiv"></div>' +
-        '<div class="listBox lb2" id="listBox2_' + index + '"></div>' +  
-        '<div class="blackDiv"></div>' +
-        '<div class="listBox lb3" id="listBox3_' + index + '">C</div>' +  
-        '<div class="blackDiv"></div>' +
-        '<div class="listBox lb4" id="listBox4_' + index + '">D</div>' +  
-        '<div class="blackDiv"></div>' +
-        '<div class="listBox lb5" id="listBox5_' + index + '">E</div>' +
-        '<div class="listBox-last" ></div>'; 
+        '<div class="blackDiv"></div>'; 
 
     el.innerHTML = itemStr;
     el.className = 'box-container';
     el.id = 'box-container' + index;
+    return el;
+}
+
+// 검색결과 항목을 Element로 반환하는 함수입니다
+function getListItem3(index) {
+
+    var el = document.createElement('div');
+    var itemStr = "";
+        
+    itemStr += '<div class="listBox lb1" id="listBox1_' + index + '"></div>' +
+        '<div class="blackDiv"></div>'; 
+
+    el.innerHTML = itemStr;
+    el.className = 'box-container2';
+    el.id = 'box-container2' + index;
     return el;
 }
 

@@ -6,14 +6,6 @@ var details = newMap();
 var life = newMap();
 var origin = newMap();
 
-var dataset = [
-    { name: '', percent: 0 },
-    { name: '', percent: 0 },
-    { name: '', percent: 0 },
-    { name: '', percent: 0 },
-    { name: '', percent: 0 }
-];
-
 // AI링크 읽기
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -81,12 +73,6 @@ async function predict() {
     var origin_detail = "<div class='ln-1'></div><div class='dt-1'> 출생지 : " + rsOrgin + "</div>";
     
     $('.result-message').html(title + explain + life_detail + origin_detail);
-    
-    // for (let i = 0; i < 5; i++) {
-    //     dataset[i].name = rstTitlelMap.get(prediction[i].className);
-    //     var tm = prediction[i].probability * 100;
-    //     dataset[i].percent = tm.toFixed(2);
-    // }
     
     // 로딩화면 없애기
     loading()

@@ -84,77 +84,50 @@ function listClick (marker,position, idx){
     // $("#box-container2"+idx).slideToggle(500);
 }
 
-// 수유실 정보
-function sublistClick1 (marker,position, idx, place){
-    var listValue = subway_list.get(place.place_name);
-    // var content = '<div class="placeinfo">' +
-    //             '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';
-    
-    nursingRoom(listValue[0],listValue[1],listValue[2],place);
-    // if (place.road_address_name) {
-    //     content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' +
-    //                 '  <span class="jibun" title="' + place.address_name + '">(지번 : ' + place.address_name + ')</span>';
-    // }  else {
-    //     content += '    <span title="' + place.address_name + '">' + place.address_name + '</span>';
-    // }                
-   
-    // content += '    <span class="tel">' + place.phone + '</span>' + 
-    //             '</div>' + 
-    //             '<div class="after"></div>';
-
-    // contentNode.innerHTML = content;
-    // placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
-    // placeOverlay.setMap(map);  
-
-}
-
 // 클릭한 리스트 장소로 이동
 function sublistClick2 (marker,position, idx, place){
 alert("2");
 
 }
 
-// 클릭한 리스트 장소로 이동
-function nursingRoom (railOprIsttCd,lnCd,stinCd,place){
+// 수유실 정보
+function nursingRoom (place){
 
-    var xhr = new XMLHttpRequest();
     // URL
     var url = 'https://openapi.kric.go.kr/openapi/convenientInfo/stationDairyRoom'; 
+    var listValue = subway_list.get(place.place_name);
     // Service Key
-    // var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'$2a$10$RE2I6N1sMcLjaPn3ozSzHOJ3UL0HyA71yj9f5R7btP1ji7pbbpJ9i'; 
     var queryParams = '?' + 'serviceKey' + '='+'$2a$10$RE2I6N1sMcLjaPn3ozSzHOJ3UL0HyA71yj9f5R7btP1ji7pbbpJ9i'; 
     queryParams += '&' + 'format=json';
-    queryParams += '&' + encodeURIComponent('railOprIsttCd') + '=' + encodeURIComponent(railOprIsttCd);
-    queryParams += '&' + encodeURIComponent('lnCd') + '=' + encodeURIComponent(lnCd);
-    queryParams += '&' + encodeURIComponent('stinCd') + '=' + encodeURIComponent(stinCd);
-    xhr.open('GET', url + queryParams);
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            
-            var resultJson = JSON.parse(this.responseText);
+    queryParams += '&' + encodeURIComponent('railOprIsttCd') + '=' + encodeURIComponent(listValue[0]);
+    queryParams += '&' + encodeURIComponent('lnCd') + '=' + encodeURIComponent(listValue[1]);
+    queryParams += '&' + encodeURIComponent('stinCd') + '=' + encodeURIComponent(listValue[2]);
+    
+    // json 데이터 갖고오기
+    $.ajax({
+        type:"GET",
+        url:url + queryParams,
+        success: function(data) {
             
             var content = '<div class="placeinfo">' +
                 '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';
             
                 // 수유실 정보 찾기
-            if ("03" === resultJson['header']['resultCode']) {
+            if ("03" === data['header']['resultCode']) {
                 content += '    <span>수유실이 없습니다.</span>';
-                content += '</div>';
-                content += '<div class="after"></div>';
-
             } else {
                 content += '    <span>수유실이 있습니다.</span>';
-                content += '  <span>(위치 : ' + resultJson['body'][0]['grndDvNm'] + ', ' + resultJson['body'][0]['dtlLoc']  + '근처)</span>';
-                content += '<div class="after"></div></div>';
-
+                content += '  <span>(위치 : ' + data['body'][0]['grndDvNm'] + ', ' + data['body'][0]['dtlLoc']  + '근처)</span>';
             }
+
+            content += '</div>';
+            content += '<div class="after"></div>';
+            
             contentNode.innerHTML = content;
             placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
             placeOverlay.setMap(map);
         }
-    };
-
-    xhr.send('');
+    });
 }
 
 // 현재 위치 이동
@@ -168,7 +141,7 @@ function currentLocation (){
         // 위치 설정
         var options = {
             center: new kakao.maps.LatLng(latitude, longitude),
-            level: 3
+            level: 2
         };
         alert("container, options" + latitude+ ","+ longitude)
         
@@ -176,63 +149,6 @@ function currentLocation (){
         map = new kakao.maps.Map(container, options);
     });
 }
-
-// // 검색키워드로 위치찾기
-// function searchKeyword(){
-//     // 장소 검색 객체를 생성합니다
-//     var ps = new kakao.maps.services.Places(); 
-    
-//     // 키워드 취득
-//     var searchKeyword = document.getElementById("searchKey").value;
-    
-//     if (searchKeyword === "") {
-//         alert("키워드를 입력해주세요");
-//     } else {
-//         // 키워드로 장소를 검색합니다
-//         ps.keywordSearch(searchKeyword, placesSearchCB); 
-//     }
-
-// }
-
-// // 키워드 검색 완료 시 호출되는 콜백함수 입니다
-// function placesSearchCB (data, status, pagination) {
-//     if (status === kakao.maps.services.Status.OK) {
-
-//         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-//         // LatLngBounds 객체에 좌표를 추가합니다
-//         var bounds = new kakao.maps.LatLngBounds();
-
-//         for (var i=0; i<data.length; i++) {
-//             displayMarker(data[i]);    
-//             bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-//         }       
-
-//         // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-//         map.setBounds(bounds);
-//     } 
-// }
-
-// // 지도에 마커를 표시하는 함수입니다
-// function displayMarker(place) {
-    
-//     // 마커를 생성하고 지도에 표시합니다
-//     var marker = new kakao.maps.Marker({
-//         map: map,
-//         position: new kakao.maps.LatLng(place.y, place.x) 
-//     });
-
-//     // 마커에 클릭이벤트를 등록합니다
-//     kakao.maps.event.addListener(marker, 'click', function() {
-//         // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-//         // infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-//         // infowindow.open(map, marker);
-//         var message = '클릭한 위치 이름은 ' + place.place_name ;
-
-
-//         var resultDiv = document.getElementById('clickLatlng'); 
-//         resultDiv.innerHTML = message;
-//     });
-// }
 
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
@@ -301,9 +217,10 @@ function displayPlaces(places) {
             // 마커를 생성하고 지도에 표시합니다
             var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x);
             var marker = addMarker(placePosition, cnt);
-            var itemEl = getListItem(cnt, places[i]); // 검색 결과 항목 Element를 생성합니다
-            var subitemEl1 = getListItem2(cnt); // 검색 결과 항목 Element를 생성합니다
-            // var subitemEl2 = getListItem3(cnt); // 검색 결과 항목 Element를 생성합니다
+            // 검색역 결과 항목 Element를 생성합니다
+            var itemEl = getListItem(cnt, places[i]);
+            // 검색 수유실 결과 항목 Element를 생성합니다
+            var subitemEl1 = getListItem2(cnt, places[i]); 
 
             // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
             // LatLngBounds 객체에 좌표를 추가합니다
@@ -330,7 +247,7 @@ function displayPlaces(places) {
                     listClick(marker, position, idx);
                 };
                 subitemEl1.onclick = function () {
-                    sublistClick1(marker, position, idx, places);
+                    nursingRoom(places);
                 };
                 // subitemEl2.onclick = function () {
                 //     sublistClick2(marker, position, idx, places);
@@ -383,7 +300,7 @@ function getListItem(index, places) {
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
-function getListItem2(index) {
+function getListItem2(index, places) {
 
     var el = document.createElement('div');
     var itemStr = "";
@@ -397,20 +314,20 @@ function getListItem2(index) {
     return el;
 }
 
-// 검색결과 항목을 Element로 반환하는 함수입니다
-function getListItem3(index) {
+// // 검색결과 항목을 Element로 반환하는 함수입니다
+// function getListItem2(index) {
 
-    var el = document.createElement('div');
-    var itemStr = "";
+//     var el = document.createElement('div');
+//     var itemStr = "";
         
-    itemStr += '<div class="listBox lb1" id="listBox1_' + index + '"></div>' +
-        '<div class="blackDiv"></div>'; 
+//     itemStr += '<div class="listBox lb1" id="listBox1_' + index + '"></div>' +
+//         '<div class="blackDiv"></div>'; 
 
-    el.innerHTML = itemStr;
-    el.className = 'box-container2';
-    el.id = 'box-container2' + index;
-    return el;
-}
+//     el.innerHTML = itemStr;
+//     el.className = 'box-container';
+//     el.id = 'box-container' + index;
+//     return el;
+// }
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {

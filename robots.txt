@@ -2,3 +2,4 @@ User-Agent:*
 Allow: /
 
 Sitemap: https://ninoplay.site/sitemap.xml
+Mozilla/5.0 (compatible; Yeti/1.1; +http://naver.me/spd)

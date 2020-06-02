@@ -94,12 +94,33 @@ alert("2");
 
 // 수유실 정보
 function nursingRoom (place, index){
+
+    // // URL
+    // var url = 'https://openapi.kric.go.kr/openapi/convenientInfo/stationDairyRoom'; 
+    // var listValue = subway_list.get(place.place_name);
+    // // Service Key
+    // var queryParams = '?' + 'serviceKey' + '='+'$2a$10$RE2I6N1sMcLjaPn3ozSzHOJ3UL0HyA71yj9f5R7btP1ji7pbbpJ9i'; 
+    // queryParams += '&' + 'format=json';
+    // queryParams += '&' + encodeURIComponent('railOprIsttCd') + '=' + encodeURIComponent(listValue[0]);
+    // queryParams += '&' + encodeURIComponent('lnCd') + '=' + encodeURIComponent(listValue[1]);
+    // queryParams += '&' + encodeURIComponent('stinCd') + '=' + encodeURIComponent(listValue[2]);
+    
+    // // json 데이터 갖고오기
+    // $.ajax({
+    //     type:"GET",
+    //     url:url + queryParams,
+    //     success: function(data) {
             
     var content = '<div class="placeinfo">' +
         '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';
 
+    //     // 수유실 정보 찾기
+    // if ("03" === data['header']['resultCode']) {
+    //     content += '    <span>수유실이 없습니다.</span>';
+    // } else {
     content += '    <span>수유실이 있습니다.</span>';
-    content += nursingRoom_list.get(index);
+    content += nursingRoom_list.get(index, content);
+    // }
 
     content += '</div>';
     content += '<div class="after"></div>';
@@ -107,7 +128,8 @@ function nursingRoom (place, index){
     contentNode.innerHTML = content;
     placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
     placeOverlay.setMap(map);
-
+    //     }
+    // });
 }
 
 // // 수유실 정보
@@ -320,7 +342,22 @@ function getListItem(index, places) {
     return el;
 }
 
-// 수유실 위치 설정
+// // 검색결과 항목을 Element로 반환하는 함수입니다
+// function getListItem2(index, places) {
+
+//     var el = document.createElement('div');
+//     var itemStr = "";
+        
+//     itemStr += '<div class="listBox lb1" id="listBox1_' + index + '"></div>' +
+//         '<div class="blackDiv"></div>'; 
+
+//     el.innerHTML = itemStr;
+//     el.className = 'box-container';
+//     el.id = 'box-container' + index;
+//     return el;
+// }
+
+// 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem2(index, places) {
 
     var el = document.createElement('div');
@@ -353,12 +390,8 @@ function getListItem2(index, places) {
                 el.className = 'box-container';
                 el.id = 'box-container' + index;
                 
-                
                 // 수유실 위치 임시저상
-                var content = "";
-                (data['body'][0]['grndDvNm'] == null) ? pl_tmp ='' : content += '<span>(위치 : ' + data['body'][0]['grndDvNm'];
-                (data['body'][0]['dtlLoc'] == null) ? pl_tmp ='' : content += ', ' + data['body'][0]['dtlLoc']  + '근처';
-                content += ')</span>';
+                var content = '<span>(위치 : ' + data['body'][0]['grndDvNm'] + ', ' + data['body'][0]['dtlLoc']  + '근처)</span>';
                 
                 nursingRoom_list.put(index, content);
             }

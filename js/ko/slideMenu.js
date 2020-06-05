@@ -7,10 +7,10 @@ function sideMenu_init(){
     menu += '<li><a class="slide-link slide-sub-title" href="../../html/ko/index.html">HOME</a></li>';
     // 지도관련
     menu += '<div class="sep settings"></div>';
-    menu += '<div class="slide-sub-title">지하철 관련</div>'
+    menu += '<div class="slide-sub-title">지하철 관련(준비중)</div>'
     menu += '<ul>';
-    menu += '<li><a class="slide-link" href="../../subway/ko/Subway.html">역주변 편의시설 검색</a></li>';
-    menu += '<li><a class="slide-link" href="http://station.kric.go.kr/v2/korLines/basic/index.do?gbvMreaWideCd=01" target="_blank">지하철 노선도</a></li>';
+    menu += '<li><a class="slide-link" id="subway" href="../../subway/ko/Subway.html">역주변 편의시설 검색</a></li>';
+    // menu += '<li><a class="slide-link" id="subway" href="http://station.kric.go.kr/v2/korLines/basic/index.do?gbvMreaWideCd=01" target="_blank">지하철 노선도</a></li>';
     // menu += '<li><a class="slide-link" href="https://map.kakao.com/link/map/37.402056,127.108212" target="_blank">다음지도</a></li>';
     menu += '</ul>';
     // 사진 테스트
@@ -37,6 +37,9 @@ function sideMenu_init(){
     
     slideMenu.childNodes[1].innerHTML = menu;
     
+
+    // 역주변 편의시설 링크 삭제
+    $('#subway').removeAttr('href');
     /*
       Slidemenu
     */

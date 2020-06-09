@@ -17,7 +17,7 @@ function sideMenu_init(){
     menu += '<div class="sep settings"></div>';
     menu += '<div class="slide-sub-title">사진 테스트</div>'
     menu += '<ul>';
-    menu += '<li><a class="slide-link" href="../../html/ko/AIdog.html">강아기 종류 찾기</a></li>';
+    menu += '<li><a class="slide-link" href="../../html/ko/AIdog.html">강아지 종류 찾기</a></li>';
     menu += '<li><a class="slide-link" href="../../html/ko/AIhistory.html">역사인물상 테스트</a></li>';
     menu += '<li><a class="slide-link" href="../../html/ko/AIanimal.html">동물상 테스트</a></li>';
     menu += '</ul>';

@@ -178,7 +178,7 @@ body.menu-active div#content .menu-trigger {
 }
 
 .slide-link {
-    text-decoration:none;
+    /* text-decoration:none; */
     color: white;
     
 }

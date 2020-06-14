@@ -1,3 +1,10 @@
 #map > div > div > div > div > img {
     clip : auto!important;
 }
+/* #map > div > div > div > div > img:hover {
+    clip : auto!important;
+    width: 200px!important;
+    height: 200px!important;
+    transition: all 1s;
+    background:url(../img/subwayLine/s2.svg) no-repeat;
+} */

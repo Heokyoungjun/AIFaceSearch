@@ -257,7 +257,7 @@ function displayPlaces(places) {
             var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x);
             var marker = addMarker(placePosition, cnt, places[i]);
             // 검색역 결과 항목 Element를 생성합니다
-            // var itemEl = getListItem(cnt, places[i]);
+            var itemEl = getListItem(cnt, places[i]);
             // 검색 수유실 결과 항목 Element를 생성합니다
             // var subitemEl1 = getListItem2(cnt, places[i]); 
 
@@ -272,19 +272,19 @@ function displayPlaces(places) {
             // 해당 장소에 인포윈도우에 장소명을 표시합니다
             // mouseout 했을 때는 인포윈도우를 닫습니다
             (function(marker, title, position, idx, places) {
-                // kakao.maps.event.addListener(marker, 'mouseover', function() {
-                //     displayInfowindow(marker, title);
-                // });
+                kakao.maps.event.addListener(marker, 'click', function(mouseEvent) {
+                    displayInfowindow(position, marker, title, places);
+                });
 
-                // kakao.maps.event.addListener(marker, 'mouseout', function() {
-                //     infowindow.close();
-                // });
-                // itemEl.onmouseover =  function () {
-                //     displayInfowindow(marker, title);
-                // };
-                // itemEl.onmouseout =  function () {
-                //     infowindow.close();
-                // };
+                kakao.maps.event.addListener(marker, 'mouseover', function() {
+                    infowindow.close();
+                });
+                itemEl.onmouseover =  function () {
+                    displayInfowindow(marker, title);
+                };
+                itemEl.onmouseout =  function () {
+                    infowindow.close();
+                };
                 // itemEl.onclick =  function () {
                 //     listClick(marker, position, idx);
                 // };
@@ -308,7 +308,7 @@ function displayPlaces(places) {
         document.getElementById("map").className = "map-before";
         init();
     } else {
-        document.getElementById("map").className = "map-after";
+        // document.getElementById("map").className = "map-after";
         // 검색결과 항목들을 검색결과 목록 Elemnet에 추가합니다
         listEl.appendChild(fragment);
         menuEl.scrollTop = 0;
@@ -396,11 +396,11 @@ function addMarker(position, idx, place) {
     // 마커 이미지 url, 스프라이트 이미지를 씁니다
     var subwayLineUrl = place.place_name.split(' ');
     var imageSrc = subwayLine_list.get(subwayLineUrl[1]);
-    var imageSize = new kakao.maps.Size(100, 100);  // 마커 이미지의 크기
+    var imageSize = new kakao.maps.Size(60, 60);  // 마커 이미지의 크기
     var imgOptions =  {
             // spriteSize : new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
-            spriteSize : new kakao.maps.Size(60, 60), // 스프라이트 이미지의 크기
-            spriteOrigin : new kakao.maps.Point(65, 50), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
+            spriteSize : new kakao.maps.Size(80, 80), // 스프라이트 이미지의 크기
+            spriteOrigin : new kakao.maps.Point(-5, 60), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
             offset: new kakao.maps.Point(0, 0) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
         };
     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
@@ -456,11 +456,31 @@ function displayPagination(pagination) {
 
 // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
 // 인포윈도우에 장소명을 표시합니다
-function displayInfowindow(marker, title) {
-    var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
+function displayInfowindow(position, marker, title, place) {
+    // var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
 
-    infowindow.setContent(content);
-    infowindow.open(map, marker);
+    // infowindow.setContent(content);
+    // infowindow.open(map, marker);
+    
+        // 마커 이미지 url, 스프라이트 이미지를 씁니다
+    // var subwayLineUrl = place.place_name.split(' ');
+    // var imageSrc = subwayLine_list.get(subwayLineUrl[1]);
+    var imageSize = new kakao.maps.Size(60, 60);  // 마커 이미지의 크기
+    var imgOptions =  {
+            // spriteSize : new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
+            spriteSize : new kakao.maps.Size(80, 80), // 스프라이트 이미지의 크기
+            spriteOrigin : new kakao.maps.Point(-5, 60), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
+            offset: new kakao.maps.Point(0, 0) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
+        };
+    var markerImage = new kakao.maps.MarkerImage("./img/subwayLine/s2.svg", imageSize, imgOptions),
+            marker = new kakao.maps.Marker({
+            position: position, // 마커의 위치
+            image: markerImage
+        });
+
+    marker.setMap(map); // 지도 위에 마커를 표출합니다
+    markers.push(marker);  // 배열에 생성된 마커를 추가합니다
+    
 }
 
  // 검색결과 목록의 자식 Element를 제거하는 함수입니다

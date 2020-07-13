@@ -8,3 +8,16 @@
     transition: all 1s;
     background:url(../img/subwayLine/s2.svg) no-repeat;
 } */
+
+.subwayImage {
+    width:390px;
+    height:200px;
+    background-repeat:no-repeat;
+    animation: mymove 0.5s;
+    border:0px;
+}
+
+@keyframes mymove {
+    0% { height: 280px;
+        width:200px;}
+}
